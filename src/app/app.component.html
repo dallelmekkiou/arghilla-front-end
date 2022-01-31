@@ -1,28 +1,60 @@
-
 <!-- ***********************************NAVBAR******************************************* -->
 <!-- header bottom start -->
-  <!-- header bottom start -->
-  <nav class="header-bottom theme1 d-none d-lg-block">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-lg-10 offset-lg-2 d-flex flex-wrap align-items-center position-relative">
+<!-- header bottom start -->
+<div class="container-fluid">
+   
+   <!-- <div class="m-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="../assets/logo/logo.png" height="28" alt="CoolBrand">
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="main-menu navbar-nav ">
+                        <a class="nav-item nav-link active" routerLink="" >Accueil</a>
+                        <a href="#" class="nav-item nav-link" routerLink="gallery">Gallerie</a>
+                        <a href="#" class="nav-item nav-link" routerLink="about">A propos de Nous</a>
+                        <a href="#" class="nav-item nav-link" routerLink="shop">Achat</a>
+                        <a href="#" class="nav-item nav-link" routerLink="admin">Administrateur</a>
+                        <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> -->
+                    <!-- </div>
+                    <div class="navbar-nav ms-auto">
+                        <a href="#" class="nav-item nav-link" routerLink="login">Connexion</a>
+                        <a href="#" class="nav-item nav-link" routerLink="register">Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>--> 
 
-                  <ul class="main-menu d-flex">
-                      <li><a class="tm-logo uk-hidden-small" href="#"><img src="../assets/logo/logo.png" alt=""></a> </li>
-                      <li routerLinkActive="active"><a routerLink="">Home</a></li>
-                      <li routerLinkActive="active"><a routerLink="gallery">Gallery</a></li>
-                      <li routerLinkActive="active"><a routerLink="about">About Us</a></li>
-                      <li routerLinkActive="active"><a routerLink="login">Login</a></li>
-                      <li routerLinkActive="active"><a routerLink="register">Register</a></li>
-                      <li routerLinkActive="active"><a routerLink="shop">Shop</a></li>
-                      <li routerLinkActive="active"><a routerLink="admin">Administrator</a></li>
 
-                  </ul>
+    <nav class="header-bottom theme1 d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 offset-lg-2 d-flex flex-wrap align-items-center position-relative">
 
-              </div>
-          </div>
-      </div>
-  </nav>
-  <!-- header bottom end -->
+                    <ul class="main-menu d-flex fixed-top bg-light align-items-center">
+                        <li><a class="tm-logo uk-hidden-small" href="#"><img src="../assets/logo/logo.png" alt=""></a>
+                        </li>
+                        <ul class="d-flex align-items-center align-center text-center">
+                          <li routerLinkActive="active"><a routerLink="">Accueil</a></li>
+                          <li routerLinkActive="active"><a routerLink="gallery">Gallerie</a></li>
+                          <li routerLinkActive="active"><a routerLink="about">A propos</a></li>
+                          <li routerLinkActive="active"><a routerLink="shop">Achat</a></li>
+                          <li routerLinkActive="active"><a routerLink="admin">Administrateur</a></li>
+                        </ul>
+                        <li routerLinkActive="active"><a routerLink="register" style="margin-left:430px">Inscription</a></li>
+                        <li routerLinkActive="active"><a routerLink="login">Connexion</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- header bottom end -->
 
 <router-outlet></router-outlet>
