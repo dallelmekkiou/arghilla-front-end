@@ -1,0 +1,257 @@
+
+    <!-- **********************************************cover della pagina gallery********************************************************************* -->
+
+<section id="hero">
+    <div class="inner">
+      <h1>Arghillà Amministratore</h1>
+      <p class="text-align">Un uomo che lavora con le sue mani è un operaio; un uomo che lavora <br>    
+        con le sue mani e il suo cervello è un artigiano; ma un uomo che lavora <br>
+        con le sue mani, il suo cervello e il suo cuore è un artista.</p>
+    </div>
+  </section>
+
+    <!-- *******************Inventario delle Opere************************* -->
+    <h3 class="text-center text-dark mt-4">Inventario delle Opere</h3>
+    
+    <!-- **********************FORMS************************ -->
+    <div class="container mt-4">
+    <form (ngSubmit)="saveArt(products)" #products="ngForm"> 
+    
+        <!-- *****************Titolo dell'opera **************************-->
+    <div class="form-group">
+        <label for="nom">Titolo dell'opera*</label>
+        <input type="text" name="Titolo dell'opera" class="form-control" id="titolo" placeholder="Sacro e Profano in fuga" ngModel required minlength="3" maxlength="150">
+    </div>
+    
+    <!-- *****************Descrizione **************************-->
+    <div class="form-group mt-4">
+        <label for="nom">Descrizione dell'opera*</label>
+        <input type="text" name="descrizione" class="form-control" id="descrizione" placeholder="La coppia Sacro e Profano in terracotta, in sella all'asino per una fuga al galoppo" ngModel required minlength="1" maxlength="300">
+    </div>
+    <!-- *****************Phone **************************-->
+    <div class="form-group mt-4">
+        <label for="nom">Immagine*</label>
+        <input type="text" name="Immagine" class="form-control" id="Immagine" placeholder="../assets/gallery/products/pic10.jpg" ngModel required minlength="5" maxlength="50">
+    </div>
+    <!-- *****************Position **************************-->
+    <div class="form-group mt-4">
+        <label for="nom">Prezzo*</label>
+        <input type="text" name="Prezzo" class="form-control" id="Prezzo" placeholder="350 €" ngModel required minlength="5" maxlength="10">
+    </div>
+    <!-- *****************>Disponibilità***************************-->
+    <div class="form-group mt-4">
+        <label for="nom">Disponibilità*</label>
+        <input type="text" name="disponibilità" class="form-control" id="disponibilità" placeholder="True or False" ngModel required minlength="5" maxlength="5">
+    </div>
+
+ <!-- *****************Available **************************-->
+    <div class="form-group mt-4">
+        <label for="nom">Esemplari restanti*</label>
+        <input type="text" name="Esemplari restanti" class="form-control" id="Esemplari restanti" placeholder="10" ngModel required minlength="1" maxlength="5">
+    </div>
+    <!-- *****************button submit **************************-->
+        <button type="button" class="btn btn-success mt-4" type="submit">Submit</button> 
+    </form>
+    </div> 
+
+
+
+
+
+    <!-- <table>
+        <caption>Opere nell'inventario</caption>
+        <thead>
+          <tr>
+            <th scope="col">Foto</th>
+            <th scope="col">Titolo dell'opera</th>
+            <th scope="col">Descrizione dell'opera</th>
+            <th scope="col">Prezzo</th>
+            <th scope="col">Disponibilità</th>
+            <th scope="col">Esemplari restanti</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Buzzcocks</th>
+            <td>1976</td>
+            <td>9</td>
+            <td>Ever fallen in love (with someone you shouldn't've)</td>
+          </tr>
+          <tr>
+            <th scope="row">The Clash</th>
+            <td>1976</td>
+            <td>6</td>
+            <td>London Calling</td>
+          </tr> -->
+    
+
+
+          <!-- <table>
+            <caption>Opere nell'inventario</caption>
+            <tr>
+              <th>Foto</th>
+              <th>Titolo dell'opera</th>
+              <th>Descrizione dell'opera</th>
+              <th>Prezzo</th>
+              <th>Disponibilità</th>
+              <th>Esemplari restanti</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+  -->
+
+<!-- 
+<div class="container"> 
+  <table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">Numero</th>
+          <th scope="col">Foto</th>
+          <th scope="col">Titolo dell'opera</th>
+          <th scope="col">Descrizione dell'opera</th>
+          <th scope="col">Prezzo</th>
+          <th scope="col">Disponibilità</th>
+          <th scope="col">Esemplari restanti</th>
+          <th scope="col">Rimuovi</th>
+          <th scope="col">Modifica</th>
+        </tr>
+      </thead>
+      <tbody >
+        <div *ngFor="let g of galleryInventario">
+        <tr>
+          <th scope="row">1</th>
+          <td> </td>
+          <td>{{g.opera}}</td>
+          <td>{{g.descrizione}}/td>
+          <td>{{g.prezzo}}</td>
+          <td>{{g.disponibilita}}</td>
+          <td>{{g.disponibilita}}</td>
+          <td>Mark</td>
+          <td>Mark</td>
+        </tr>
+        </div>
+        </tbody>
+  </table>
+</div> -->
+
+
+<!-- ********************cards code**********************************  -->
+<!-- <main  class="container">
+    <section class="row">
+        <article class="col-4" *ngFor= "let g of galleryInventario">
+            <img src="assets/pic_card.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title"> Titolo dell'opera {{g.opera}} </h4>
+              <h5 class="card-title"> Descrizione {{g.descrizione}}</h5>
+              <p class="card-text"> Prezzo {{g.prezzo}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <span> Pezzi Restanti  </span>{{g.pezzi}}</li>
+              <li class="list-group-item"> Available {{g.disponibilita}} 
+                   <button (click)="patchEmployees(t)"> <span [ngClass]="{
+                'far fa-thumbs-up text-success': t.available,
+                'fas fa-thumbs-down text-danger': !t.available
+             }"></span> </button>  -->
+            <!-- </li>
+            </ul>
+            <div class="card-body" > --> 
+              <!-- <button class="btn btn-danger" (click)="deleteEmployees(t)">Delete</button>
+              <button class="btn btn-info btn-space" (click)="editEmployees(t)">Modify</button> -->
+            <!-- </div>
+        </article>
+    </section>
+</main> --> 
+<!-- ********************************cards inventario presentati le opere******************* -->
+<div class="card-group mt-4">
+  <div class="card" *ngFor="let g of galleryAdmin">
+    <img src="{{g.pic}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{g.opera}}</h5>
+      <p class="card-text"> Descrizione d'artista: {{g.descrizione}}</p>
+      <p class="card-text">Prezzo: {{g.prezzo}}</p>
+      <p class="card-text">Disponibilità: {{g.disponibilita}}
+        <!-- modificazione della disponibilità con ngClass e il dito ok o ko ************** -->
+        <button (click)="patchOpera(g)"> <span [ngClass]="{
+          'far fa-thumbs-up text-success': g.available,
+          'fas fa-thumbs-down text-danger': !g.available
+        }"></span> </button>
+      </p>
+      <div class="form-group row" >
+        <div class="col-md-6">
+          <!-- pulsante delete -->
+        <button type="button" id="btnSubmit" class="btn form-control  btn-sm" (click)="deleteOpera(g)"> Rimuovi </button>
+      </div>
+      <div class="col-md-6">
+<!-- pulsante modifica -->
+        <button  class="btn form-control  btn-sm" type="button" (click)="formularioModifica(g)"> Modifica </button> 
+        <!-- (click)="editOpera(g)" -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
+
+<div class="container" *ngIf="showMe">
+<!-- ngif serve per poter far apparire il mio formulario a determinate condizioni,
+in questo caso se clicco sul pulsante modifica più in alto 
+questo forulario appare. il metodo showMe lo metto poi nel ts, lo dichiaro come un boolean 
+showMe: boolean= false; lo metto in false per far capire che non deve apparire con l'apertura della pagina 
+ma solo quando ci clicco sopra. per dare un boolean true basta mettere un ! davanti 
+formulaire (g:any){
+    this.showMe = !this.showMe
+  }-->
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-header">
+  <h5 class="text-center">Formulario modificante le informazioni dell'opera selezionata</h5> 
+      </div>
+      
+        <div class="form-group">
+        <label for="nom">Titolo dell'Opera</label>
+        <input type="text" [(ngModel)]= "producthtml.opera" >
+        <p>{{producthtml.opera}}</p>
+      </div>
+
+      <div class="form-group">
+         <label for="nom">Descrizione dell'opera</label>
+        <input type="text" [(ngModel)]="producthtml.descrizione" >
+        <p>{{producthtml.descrizione}}</p>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="nom">Prezzo</label>
+        <input type="text" [(ngModel)]="producthtml.prezzo" >
+        <p>{{producthtml.prezzo}}</p>   
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Esemplari restanti</label>
+        <input type="text" [(ngModel)]="producthtml.pezzi" >
+        <p>{{producthtml.pezzi}}</p>  
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Immagine</label>
+        <input type="text" [(ngModel)]="producthtml.pic" >
+        <p>{{producthtml.pic}}</p>  
+      </div>
+
+      <button class="btn btn-warning" (click)="registraModifiche()">Registra</button>
+    
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
