@@ -1,0 +1,42 @@
+"gallery": [
+    {
+      "id": 1,
+      "opera": "Gli sposi del mare",
+      "descrizione": "Una coppia in terracotta, la loro storia d'amore gravita intorno al mare",
+      "pic": "../assets/gallery/products/pic1.jpg",
+      "prezzo": "500 €",
+      "disponibilita": true,
+      "pezzi": 2,
+      "available": true
+    },
+    {
+      "id": 2,
+      "opera": "Le caraffe calabresi",
+      "descrizione": "Caraffe in terracotta, con i simboli della terra di Persefone",
+      "pic": "../assets/gallery/products/pic2.jpg",
+      "prezzo": "150 €",
+      "disponibilita": true,
+      "pezzi": 15,
+      "available": true
+    },
+    {
+      "id": 3,
+      "opera": "Sacro e Profano in fuga",
+      "descrizione": "La coppia Sacro e Profano in terracotta, in sella all'asino per una fuga al galoppo",
+      "pic": "../assets/gallery/products/pic10.jpg",
+      "prezzo": "350 €",
+      "disponibilita": true,
+      "pezzi": 15,
+      "available": true
+    },
+    {
+      "id": 4,
+      "opera": "I sogni in mano",
+      "descrizione": "Mano in terracotta, racchiudente i sogni più lieti",
+      "pic": "../assets/gallery/products/pic3.jpg",
+      "prezzo": "250€",
+      "disponibilita": true,
+      "pezzi": 7,
+      "available": true
+    }
+  ],

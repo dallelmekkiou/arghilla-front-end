@@ -1,0 +1,93 @@
+<!-- Cover -->
+
+<section id="hero">
+    <div class="inner">
+      <h1>Arghillà Art</h1>
+      <p>L'ARTE DELLE TERRE | THE ART OF LANDS</p>
+    </div>
+  </section>
+
+
+  <div class="container mt-4">
+    <h3 class="uk-panel-title text-center">L'ARTE DELLE TERRE | THE ART OF LANDS</h3>
+  <p class="uk-h3" style="text-align: center;"><span style="color: #808080;">"Modello con le mani la terra della mia terra per ritrovare segni del passato, simboli di una cultura, di una identit&agrave;, della Calabria.&rdquo;</span></p>
+  <p class="uk-h3" style="text-align: center;"><span style="color: #808080;">&ldquo;With my hands I shape the clay of my land, seeking signs of the past, symbols of a culture, of an identity, of Calabria.&rdquo;</span></p>
+
+  </div>
+
+  <!-- cart -->
+<div class="container mt-4">
+  <h5>Carrello</h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numero Ordine</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+    </table>
+  
+
+  <h5>Dati Personali</h5>
+<form (ngSubmit)="saveInformazioni(cliente)" #cliente="ngForm" action="#"> 
+  <p><i>Le voci del formulario marcate dal simbolo </i><em>*</em> sono <em>obbligatorie</em></p>
+  <fieldset>
+    <label for="sexe">Genere</label>
+      <select id="sexe">
+        <option value="F" name="sexe">Sig.ra</option>
+        <option value="H" name="sexe">Sig.re</option>
+      </select><br>
+      <label for="nom">Nome e Cognome<em>*</em></label>
+      <input id="nom" placeholder="Olivier Serre" autofocus="" required=""><br>
+      <label for="telephone">Numero di cellulare<em>*</em></label>
+      <input id="telephone" type="tel" placeholder="06xxxxxxxx" required="" pattern="06[0-9]{8}"><br>
+      <label for="email">Email<em>*</em></label>
+      <input id="email" type="email" placeholder="prenom.nom@polytechnique.edu" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@polytechnique.edu"><br>
+      <label for="Indirizzo">Indirizzo<em>*</em></label>
+      <input id="Indirizzo" placeholder="Via Almicare Cucchini n°3" autofocus="" required=""><br>
+      <label for="Città">Città<em>*</em></label>
+      <input id="Città" placeholder="Roma" autofocus="" required=""><br>
+      <label for="Paese">Paese<em>*</em></label>
+      <select id="sexe">
+        <option value="P" name="paese">Francia</option>
+        <option value="P" name="paese">Germania</option>
+        <option value="P" name="paese">Spagna</option>
+        <option value="P" name="paese">Portogallo</option>
+        <option value="P" name="paese">Austria</option>
+        <option value="P" name="paese">Grecia</option>
+        <option value="P" name="paese">Polonia</option>
+        <option value="P" name="paese">Lussembourgo</option>
+        <option value="P" name="paese">Marocco</option>
+        <option value="P" name="paese">Tunisia</option>
+        <option value="P" name="paese">Algeria</option>
+        <option value="P" name="paese">Venezuela</option>
+        <option value="P" name="paese">Italia</option>
+      </select><br>
+  </fieldset>
+  <!-- <fieldset> -->
+    <!-- <legend>Information personnelles</legend>
+      <label for="age">Age<em>*</em></label>
+      <input id="age" type="number" placeholder="xx" pattern="[0-9]{2}" required=""><br>
+      <label for="sexe">Sexe</label>
+      <select id="sexe">
+        <option value="F" name="sexe">Femme</option>
+        <option value="H" name="sexe">Homme</option>
+      </select><br>
+      <label for="comments">Pourquoi voulez-vous vous impliquer dans l'organisation du point γ?</label>
+      <textarea id="comments"></textarea>
+  </fieldset> -->
+  <p><input type="submit" value="Invia"></p>
+</form>
+</div>
+
+
+
