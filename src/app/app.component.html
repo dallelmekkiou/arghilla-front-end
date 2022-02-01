@@ -17,8 +17,8 @@
                           <li routerLinkActive="active"><a routerLink="shop">Achat</a></li>
                           <li routerLinkActive="active"><a routerLink="admin">Administrateur</a></li>
                         </ul>
-                        <li routerLinkActive="active"><a routerLink="register" style="margin-left:430px">Inscription</a></li>
-                        <li routerLinkActive="active"><a routerLink="login">Connexion</a></li>
+                        <li routerLinkActive="active"><a *ngIf="authentificationService.authentification" (click)="LogOut()" >Déconnexion</a></li>
+                        <li routerLinkActive="active"><a *ngIf="!authentificationService.authentification" routerLink="authentification" >Connexion</a></li>
                     </ul>
 
                 </div>
