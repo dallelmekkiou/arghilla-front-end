@@ -1,0 +1,41 @@
+
+                 <!--********************************* login *************************************************-->
+
+                 <div class="main mt-6">  	
+                    <input type="checkbox" id="chk" aria-hidden="true"> 
+                
+                      <div class="signup">
+                            <form (ngSubmit)="addUser(user)" #user="ngForm">
+                                <label for="chk" aria-hidden="true" style="color:black;">Créez votre compte ?</label>
+                                <input type="email" name="mail" placeholder="Mail" required="" ngModel>
+                                <input type="password" name="password" placeholder="Mot de passe" required="" ngModel>
+                                <input type="hidden" name="role"  value="user" ngModel>
+                                <button type="submit">Créer</button>
+                            </form>
+                        </div>
+                
+                        <div class="login  mt-4 ">
+                            
+                            <form (ngSubmit)="LoginTs(l.value)" #l="ngForm">
+                                <label for="chk" aria-hidden="true">Connexion</label>
+                                <input class="form-control ng-invalid ng-dirty ng-touched" type="email" placeholder="Adresse mail" ngModel name="email" #email='ngModel' required minlength="2" maxlength="20">
+                                <!-- voir mosh https://www.youtube.com/watch?v=hAaoPOx_oIw -->
+                                <div class="container alert alert-danger" *ngIf="email.touched && !email.valid">
+                                    <div *ngIf="email.errors?.['required']">Inserez votre adresse mail</div>
+                                    <!-- <div *ngIf="email.errors?.['minlength']">Votre prénom doit contenir minimum 2 caractères</div> -->
+                                    <!-- <div *ngIf="email.errors?.['maxlength']">Votre prénom ne peut pas dépasser 20 caractères</div> -->
+                                </div>
+                                <!-- <input type="nom" name="nom" placeholder="Nom" ngModel required=""> -->
+                                <input class="form-control ng-invalid ng-dirty ng-touched" type="text"  placeholder="Mot de passe" ngModel name="password" #password='ngModel' required minlength="8" maxlength="20">
+                                <!-- voir mosh https://www.youtube.com/watch?v=hAaoPOx_oIw -->
+                                <div class="container alert alert-danger" *ngIf="password.touched && !password.valid">
+                                    <div *ngIf="password.errors?.['required']">Inserez votre mot de passe</div> 
+                                     <div *ngIf="password.errors?.['minlength']">Votre mot de pass doit contenir minimum 8 caractères</div>
+                                    <div *ngIf="password.errors?.['maxlength']">Votre mot de pass ne peut pas dépasser 20 caractères</div>
+                                </div>
+                                <button type="submit">Connexion</button>
+                            
+                            </form>
+                        </div>
+                </div>
+                
