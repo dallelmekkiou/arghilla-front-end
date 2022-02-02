@@ -7,17 +7,15 @@ import { UsersService } from 'src/app/services/users.service'
   styleUrls: ['./gallery.component.css'],
 })
 export class GalleryComponent implements OnInit {
-  ordinihtml = {
-    opera: '',
-    pic: '',
-    quantita: '',
-    totale: '',
-    cellulare: '',
-    email: '',
-    indirizzo: '',
-    citta: '',
-    paese: '',
-    nome: '',
+  oeuvrehtml = {
+    id: '',
+    nom: '',
+    description: '',
+    image: '',
+    prix: 0,
+    quantite: 0,
+    disponibilite: false,
+    categorie: '',
   }
 
   constructor(private service: UsersService) {}
@@ -30,17 +28,11 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.getGallery()
 
-    // qui richiamo il metodo usato nel ts affiché sia mostrato
-    // automaticamente sulla pagina
+    
   }
 
-  //metodo getGallery per recuperare le informazioni del servizio user
-  // questo servizio (variabile locaale dichiarata nel constructor)si lega al metodo dichiarato
-  // nel servizio user (getGallery) per abbonarsi ai dati e restituirli sulla tabella locale
-  // dichiarata sotto il costruttore.
-
   getGallery() {
-    this.service.getGallery().subscribe((data) => {
+    this.service.getGalleryService().subscribe((data) => {
       this.galleryTs = data
       console.log(this.galleryTs)
     })
@@ -54,24 +46,24 @@ export class GalleryComponent implements OnInit {
     console.log(g)
   }
 
-  formularioAcquisto(g: any) {
-    this.showMe = true
-    this.totale = g.prezzo * g.quantita
-    console.log(this.totale)
-  }
+  // formularioAcquisto(g: any) {
+  //   this.showMe = true
+  //   this.totale = g.prezzo * g.quantita
+  //   console.log(this.totale)
+  // }
 
-  registraOrdine() {
-    this.service.registraOrdineService(this.ordinihtml).subscribe((data) => {
-      console.log('Le modifiche sono state effettuate!')
-      // (this. ordinihtml) this è per dire che stiamo su una variabile locale
-    })
-  }
+  // registraOrdine() {
+  //   this.service.registraOrdineService(this.ordinihtml).subscribe((data) => {
+  //     console.log('Le modifiche sono state effettuate!')
+  //     // (this. ordinihtml) this è per dire che stiamo su una variabile locale
+  //   })
+  // }
 
-  AggiungereOrdine(ordinihtml: any) {
-    console.log(ordinihtml.value)
-    let data = ordinihtml.value
-    this.service.registraOrdineService(data).subscribe((data) => {
-      console.log("L'ordine è stato registrato")
-    })
-  }
+  // AggiungereOrdine(ordinihtml: any) {
+  //   console.log(ordinihtml.value)
+  //   let data = ordinihtml.value
+  //   this.service.registraOrdineService(data).subscribe((data) => {
+  //     console.log("L'ordine è stato registrato")
+  //   })
+  // }
 }

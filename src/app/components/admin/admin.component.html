@@ -13,317 +13,324 @@
   </div>
 </section>
 
-<!-- *******************Inventario delle Opere************************* -->
-<h3 class="text-center text-dark mt-4">Inventario delle Opere</h3>
+<!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD POST       ************************* -->
+<h3 class="text-center text-dark mt-4">Ajouter une oeuvre à l'inventaire</h3>
 
-<!-- **********************FORMS************************ -->
-<div class="container mt-4">
-  <form (ngSubmit)="saveArt(products)" #products="ngForm">
-    <!-- *****************Titolo dell'opera **************************-->
-    <div class="form-group">
-      <label for="nom">Nom de l'œuvre*</label>
-      <input
-        type="text"
-        name="Titolo dell'opera"
-        class="form-control"
-        id="titolo"
-        placeholder="Sacro e Profano in fuga"
-        ngModel
-        required
-        minlength="3"
-        maxlength="150"
-      />
-    </div>
+<!-- **********************         FORMS             ************************ -->
 
-    <!-- *****************Descrizione **************************-->
-    <div class="form-group mt-4">
-      <label for="nom">Description de l'œuvre*</label>
+<form class="form-style-9" (ngSubmit)="addOeuvre(oeuvre)" #oeuvre="ngForm">
+  <ul>
+    <li>
+      <!-- *****************         Nom de l'œuvre              **************************-->
       <input
         type="text"
-        name="descrizione"
-        class="form-control"
-        id="descrizione"
-        placeholder="La coppia Sacro e Profano in terracotta, in sella all'asino per una fuga al galoppo"
+        name="nom"
+        class="field-style field-split align-left"
+        placeholder="Nom de l'oeuvre"
         ngModel
         required
-        minlength="1"
-        maxlength="300"
-      />
-    </div>
-    <!-- *****************Phone **************************-->
-    <div class="form-group mt-4">
-      <label for="nom">Image*</label>
-      <input
-        type="text"
-        name="Immagine"
-        class="form-control"
-        id="Immagine"
-        placeholder="../assets/gallery/products/pic10.jpg"
-        ngModel
-        required
-        minlength="5"
+        minlength="4"
         maxlength="50"
       />
-    </div>
-    <!-- *****************Position **************************-->
-    <div class="form-group mt-4">
-      <label for="nom">Prix*</label>
-      <input
-        type="text"
-        name="Prezzo"
-        class="form-control"
-        id="Prezzo"
-        placeholder="350 €"
-        ngModel
-        required
-        minlength="5"
-        maxlength="10"
-      />
-    </div>
-    <!-- *****************>Disponibilità***************************-->
-    <div class="form-group mt-4">
-      <label for="nom">Disponibilité*</label>
-      <input
-        type="text"
-        name="disponibilità"
-        class="form-control"
-        id="disponibilità"
-        placeholder="True or False"
-        ngModel
-        required
-        minlength="5"
-        maxlength="5"
-      />
-    </div>
 
-    <!-- *****************Available **************************-->
-    <div class="form-group mt-4">
-      <label for="nom">Nombre de pièces en stock*</label>
+      <!-- *****************                  categorie                         **************************-->
+
+      <select name="categorie" class="mt-2">
+        <option value="categorie">--Choisissez une categorie--</option>
+        <option value="c" *ngFor="let c of categorieAdmin._embedded.categories">
+          {{ c.nom }}
+        </option>
+      </select>
+
+      <!-- *****************                   Prix                          **************************-->
+    </li>
+
+    <li>
+      <input
+        type="number"
+        name="prix"
+        class="field-style field-split align-left"
+        placeholder="Prix"
+        ngModel
+        required
+      />
+      <!-- *****************                quantité                          ***************************-->
+      <input
+        type="number"
+        name="quantite"
+        class="field-style field-split align-right"
+        placeholder="Quantité"
+        ngModel
+        required
+      />
+    </li>
+    <!-- *****************                disponibilité                          ***************************-->
+    <input
+      type="checkbox"
+      checked
+      name="disponibilite"
+      class="field-style field-split align-right"
+      placeholder="Disponibilite"
+      ngModel
+      required
+    />
+    <!-- *****************                Image                          **************************-->
+    <li>
       <input
         type="text"
-        name="Esemplari restanti"
-        class="form-control"
-        id="Esemplari restanti"
-        placeholder="10"
+        name="image"
+        class="field-style field-full align-none"
+        placeholder="Image"
+        ngModel
+        required
+      />
+    </li>
+
+    <!-- *****************           Description de l'œuvre              **************************-->
+    <li>
+      <textarea
+        name="field5"
+        class="description"
+        placeholder="Description"
         ngModel
         required
         minlength="1"
-        maxlength="5"
-      />
-    </div>
-    <!-- *****************button submit **************************-->
-    <button type="button" class="btn btn-success mt-4" type="submit">
-      Enregistrer
-    </button>
-  </form>
-</div>
+        maxlength="100"
+      ></textarea>
+    </li>
+    <li>
+      <input type="submit" value="Enregistrer" />
+    </li>
+  </ul>
+</form>
 
-<!-- <table>
-        <caption>Opere nell'inventario</caption>
-        <thead>
-          <tr>
-            <th scope="col">Foto</th>
-            <th scope="col">Titolo dell'opera</th>
-            <th scope="col">Descrizione dell'opera</th>
-            <th scope="col">Prezzo</th>
-            <th scope="col">Disponibilità</th>
-            <th scope="col">Esemplari restanti</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Buzzcocks</th>
-            <td>1976</td>
-            <td>9</td>
-            <td>Ever fallen in love (with someone you shouldn't've)</td>
-          </tr>
-          <tr>
-            <th scope="row">The Clash</th>
-            <td>1976</td>
-            <td>6</td>
-            <td>London Calling</td>
-          </tr> -->
+<!-- *****   FIN formulaire   ***** -->
 
-<!-- <table>
-            <caption>Opere nell'inventario</caption>
-            <tr>
-              <th>Foto</th>
-              <th>Titolo dell'opera</th>
-              <th>Descrizione dell'opera</th>
-              <th>Prezzo</th>
-              <th>Disponibilità</th>
-              <th>Esemplari restanti</th>
-            </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-  -->
+<!-- ********************************AFFICHAGE DES OEUVRES ******************* -->
+<div class="containair mt-4">
+  <div class="row">
+    <div class="card-group col-8">
+      <div class="card" *ngFor="let g of galleryAdmin._embedded.oeuvres">
+        <img src="" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ g.nom }}</h5>
+          <p class="card-text">Description: {{ g.description }}</p>
+          <p class="card-text">Prix: {{ g.prix }}</p>
+          <p class="card-text">
+            Disponibilité: {{ g.disponibilite }} -->
 
-<!-- 
-<div class="container"> 
-  <table class="table table-hover">
-    <thead>
-        <tr>
-          <th scope="col">Numero</th>
-          <th scope="col">Foto</th>
-          <th scope="col">Titolo dell'opera</th>
-          <th scope="col">Descrizione dell'opera</th>
-          <th scope="col">Prezzo</th>
-          <th scope="col">Disponibilità</th>
-          <th scope="col">Esemplari restanti</th>
-          <th scope="col">Rimuovi</th>
-          <th scope="col">Modifica</th>
-        </tr>
-      </thead>
-      <tbody >
-        <div *ngFor="let g of galleryInventario">
-        <tr>
-          <th scope="row">1</th>
-          <td> </td>
-          <td>{{g.opera}}</td>
-          <td>{{g.descrizione}}/td>
-          <td>{{g.prezzo}}</td>
-          <td>{{g.disponibilita}}</td>
-          <td>{{g.disponibilita}}</td>
-          <td>Mark</td>
-          <td>Mark</td>
-        </tr>
-        </div>
-        </tbody>
-  </table>
-</div> -->
-
-<!-- ********************cards code**********************************  -->
-<!-- <main  class="container">
-    <section class="row">
-        <article class="col-4" *ngFor= "let g of galleryInventario">
-            <img src="assets/pic_card.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h4 class="card-title"> Titolo dell'opera {{g.opera}} </h4>
-              <h5 class="card-title"> Descrizione {{g.descrizione}}</h5>
-              <p class="card-text"> Prezzo {{g.prezzo}}</p>
+            <!-- modificazione della disponibilità con ngClass e il dito ok o ko ************** -->
+            <button (click)="patchOpera(g)">
+              <span
+                [ngClass]="{
+                  'far fa-thumbs-up text-success': g.disponible,
+                  'fas fa-thumbs-down text-danger': !g.disponible
+                }"
+              ></span>
+            </button>
+          </p>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <!-- boutton delete -->
+              <button
+                type="button"
+                id="btnSubmit"
+                class="btn form-control btn-sm"
+                (click)="deleteOeuvre(g.id)"
+              >
+                Supprimer
+              </button>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"> <span> Pezzi Restanti  </span>{{g.pezzi}}</li>
-              <li class="list-group-item"> Available {{g.disponibilita}} 
-                   <button (click)="patchEmployees(t)"> <span [ngClass]="{
-                'far fa-thumbs-up text-success': t.available,
-                'fas fa-thumbs-down text-danger': !t.available
-             }"></span> </button>  -->
-<!-- </li>
-            </ul>
-            <div class="card-body" > -->
-<!-- <button class="btn btn-danger" (click)="deleteEmployees(t)">Delete</button>
-              <button class="btn btn-info btn-space" (click)="editEmployees(t)">Modify</button> -->
-<!-- </div>
-        </article>
-    </section>
-</main> -->
-<!-- ********************************cards inventario presentati le opere******************* -->
-<div class="card-group mt-4">
-  <div class="card" *ngFor="let g of galleryAdmin">
-    <img src="{{ g.pic }}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ g.opera }}</h5>
-      <p class="card-text">Description: {{ g.descrizione }}</p>
-      <p class="card-text">Prix: {{ g.prezzo }}</p>
-      <p class="card-text">
-        Disponibilité: {{ g.disponibilita }}
-        <!-- modificazione della disponibilità con ngClass e il dito ok o ko ************** -->
-        <button (click)="patchOpera(g)">
-          <span
-            [ngClass]="{
-              'far fa-thumbs-up text-success': g.available,
-              'fas fa-thumbs-down text-danger': !g.available
-            }"
-          ></span>
-        </button>
-      </p>
-      <div class="form-group row">
-        <div class="col-md-6">
-          <!-- pulsante delete -->
-          <button
-            type="button"
-            id="btnSubmit"
-            class="btn form-control btn-sm"
-            (click)="deleteOpera(g)"
-          >
-            Supprimer
-          </button>
-        </div>
-        <div class="col-md-6">
-          <!-- pulsante modifica -->
-          <button
-            class="btn form-control btn-sm"
-            type="button"
-            (click)="formularioModifica(g)"
-          >
-            Modifier
-          </button>
-          <!-- (click)="editOpera(g)" -->
+            <div class="col-md-6">
+              <!-- pulsante modifica -->
+
+              <button
+                class="btn form-control btn-sm"
+                id="btnSubmit"
+                type="button"
+                (click)="formulaireModifications(g)"
+              >
+                Modifier
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
+  <!-- <div class="container">
+    <form class="form-style-9">
+      
 
-  <div class="container" *ngIf="showMe">
-    <!-- ngif serve per poter far apparire il mio formulario a determinate condizioni,
-in questo caso se clicco sul pulsante modifica più in alto 
-questo forulario appare. il metodo showMe lo metto poi nel ts, lo dichiaro come un boolean 
-showMe: boolean= false; lo metto in false per far capire che non deve apparire con l'apertura della pagina 
-ma solo quando ci clicco sopra. per dare un boolean true basta mettere un ! davanti 
-formulaire (g:any){
-    this.showMe = !this.showMe
-  }-->
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="text-center">
+                Formulario modificante le informazioni dell'opera selezionata
+              </h5>
+            </div>
 
-    <div class="row">
-      <div class="col-md-4 offset-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h5 class="text-center">
-              Formulario modificante le informazioni dell'opera selezionata
-            </h5>
+            <div class="form-group">
+              <label for="id">Id de l'oeuvre</label>
+
+              <input type="text" name="id" [(ngModel)]="oeuvrehtml.id" />
+              <p>{{ oeuvrehtml.id }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Nom de l'oeuvre</label>
+              <input type="text" name="nom" [(ngModel)]="oeuvrehtml.nom" />
+              <p>{{ oeuvrehtml.nom }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descrizione dell'opera</label>
+              <input
+                type="text"
+                name="description"
+                [(ngModel)]="oeuvrehtml.description"
+              />
+              <p>{{ oeuvrehtml.description }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="prix">Prezzo</label>
+              <input type="text" name="prix" [(ngModel)]="oeuvrehtml.prix" />
+              <p>{{ oeuvrehtml.prix }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="quantite">Esemplari restanti</label>
+              <input
+                type="text"
+                name="quantite"
+                [(ngModel)]="oeuvrehtml.quantite"
+              />
+              <p>{{ oeuvrehtml.quantite }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="image">Immagine</label>
+              <input type="text" name="image" [(ngModel)]="oeuvrehtml.image" />
+              <p>{{ oeuvrehtml.image }}</p>
+            </div>
+
+            <div class="form-group">
+              <label for="categorie">Immagine</label>
+              <input
+                type="text"
+                name="categorie"
+                [(ngModel)]="oeuvrehtml.categorie"
+              />
+              <p>{{ oeuvrehtml.categorie }}</p>
+            </div>
+
+            <button
+              class="btn btn-warning"
+              type="submit"
+              (click)="saveModifications()"
+            >
+              Enregistrer
+            </button>
           </div>
-
-          <div class="form-group">
-            <label for="nom">Titolo dell'Opera</label>
-            <input type="text" [(ngModel)]="producthtml.opera" />
-            <p>{{ producthtml.opera }}</p>
-          </div>
-
-          <div class="form-group">
-            <label for="nom">Descrizione dell'opera</label>
-            <input type="text" [(ngModel)]="producthtml.descrizione" />
-            <p>{{ producthtml.descrizione }}</p>
-          </div>
-
-          <div class="form-group">
-            <label for="nom">Prezzo</label>
-            <input type="text" [(ngModel)]="producthtml.prezzo" />
-            <p>{{ producthtml.prezzo }}</p>
-          </div>
-
-          <div class="form-group">
-            <label for="nom">Esemplari restanti</label>
-            <input type="text" [(ngModel)]="producthtml.pezzi" />
-            <p>{{ producthtml.pezzi }}</p>
-          </div>
-
-          <div class="form-group">
-            <label for="nom">Immagine</label>
-            <input type="text" [(ngModel)]="producthtml.pic" />
-            <p>{{ producthtml.pic }}</p>
-          </div>
-
-          <button class="btn btn-warning" (click)="registraModifiche()">
-            Registra
-          </button>
         </div>
       </div>
-    </div>
+    </form>
+  </div>
+</div> -->
+
+  <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
+
+  <div class="container mt-4" *ngIf="showMe">
+    <form>
+      <fieldset>
+        <legend>Formulaire de Modification</legend>
+
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            name="image"
+            [(ngModel)]="oeuvrehtml.image"
+            class="form-control"
+            id="nom"
+            placeholder="https://www.aixenprovence.fr/local/cache-gd2/a5/20bd008f32f9015e71da76efda06dc.jpg?1583329035"
+          />
+          <!-- <p>{{ g.image }}</p> -->
+        </div>
+
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            type="text"
+            name="nom"
+            [(ngModel)]="oeuvrehtml.nom"
+            class="form-control"
+            id="email"
+            placeholder="Les visages sans masque"
+          />
+          <!-- <p>{{ g.nom }}</p> -->
+        </div>
+
+        <div class="form-group">
+          <label for="descripion">Description</label>
+          <input
+            type="text"
+            name="description"
+            [(ngModel)]="oeuvrehtml.description"
+            class="form-control"
+            id="email"
+            placeholder="Cette oeuvre est faconnée dans l'argille du Poro, réputée"
+          />
+          <!-- <p>{{ g.description }}</p> -->
+        </div>
+
+        <div class="form-group">
+          <label for="prix">Prix</label>
+          <input
+            type="text"
+            name="prix"
+            [(ngModel)]="oeuvrehtml.prix"
+            class="form-control"
+            id="email"
+            placeholder="150 euros"
+          />
+          <!-- <p>{{ g.prix }}</p> -->
+        </div>
+
+        <div class="form-group">
+          <label for="email">Quantité</label>
+          <input
+            type="number"
+            name="quantite"
+            [(ngModel)]="oeuvrehtml.quantite"
+            class="form-control"
+            id="email"
+            placeholder="0"
+          />
+          <!-- <p>{{ g.quantite }}</p> -->
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="email">Categorie</label>
+          <input
+            type="text"
+            name="horaire"
+            [(ngModel)]="oeuvrehtml.categorie"
+            class="form-control"
+            id="email"
+            placeholder="pierre.giraud@edhec.com"
+          /> -->
+        <!-- <p>{{t.horaire}}</p> -->
+        <!-- </div> -->
+
+        <button class="btn btn-outline-warning" (click)="saveModifications()">
+          Enregistrer
+        </button>
+      </fieldset>
+    </form>
   </div>
 </div>

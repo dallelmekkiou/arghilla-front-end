@@ -14,18 +14,18 @@
       avec ses mains, son cerveau et son cœur est un artiste.
     </p>
     <p></p>
-    <p class="text-align">
+    <em class="text-align">
       A man who works with his hands is a workman; a man who works <br />
       with his hands and his brain is a craftsman; but a man who works <br />
       with his hands, his brain and his heart is an artist.
-    </p>
+    </em>
   </div>
 </section>
 
 <!-- texte -->
 <div class="container mt-4">
   <h3 class="uk-panel-title text-center">
-    L'ARTS DES TERRES | THE ART OF LANDS
+    L'ARTS DES TERRES |<em>THE ART OF LANDS</em>
   </h3>
   <p class="uk-h3" style="text-align: center">
     <span style="color: #808080"
@@ -35,8 +35,11 @@
   </p>
   <p class="uk-h3" style="text-align: center">
     <span style="color: #808080"
-      >&ldquo;With my hands I shape the clay of my land, seeking signs of the
-      past, symbols of a culture, of an identity, of Calabria.&rdquo;</span
+      >&ldquo;
+      <em>
+        With my hands I shape the clay of my land, seeking signs of the past,
+        symbols of a culture, of an identity, of Calabria.</em
+      >&rdquo;</span
     >
   </p>
   <p class="mt-4 text-elign">
@@ -60,7 +63,7 @@
     et le ciel.
   </p>
   <p></p>
-  <p>
+  <em>
     Arghillà is a district of Reggio Calabria, the place where the memory,
     culture and symbolism of the land of Calabria take shape. The term is
     onomatopoeic, recalling clay, but perhaps the etymology of the name derives
@@ -78,201 +81,9 @@
     unique. Let yourself be captivated by the candelabra representing real,
     mythical, epic characters and symbols of the territory, or by the lamps
     depicting water, earth and sky.
-  </p>
+  </em>
 </div>
 
-<!-- *******************************cards products methode *ngFor pour cloner les données de la base de données db.json*********************** -->
+<!-- *******************************cards products methode *ngFor********************** -->
 
-<div class="card-group mt-4">
-  <div class="card" *ngFor="let g of galleryTs">
-    <img src="{{ g.pic }}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ g.opera }}</h5>
-      <p class="card-text">Description: {{ g.descrizione }}</p>
-      <p class="card-text">Prix: {{ g.prezzo }}</p>
-      <p class="card-text">Disponibilité: {{ g.disponibilita }}</p>
-
-      <!-- button per le quantità -->
-      <!-- <div type="content">
-<button type="button" class="btn btn-outline" (click)="piu(g)"><img src="https://img.icons8.com/small/16/000000/plus.png"/></button> 
-<span>1</span> 
-<button type="button" class="btn btn-outline"(click)="meno(g)"><img src="https://img.icons8.com/small/16/000000/minus.png"/></button>
-      </div> -->
-      <form #f="ngForm" (ngSubmit)="Acquisto(g)" class="form-inline">
-        <!-- #f="ngForm" indique que c'est un formulaire angular  pour marcher il faut evidemmment importer FormsModule dans app.module.ts -->
-        <div class="form-group mx-sm-3 mb-2">
-          <input
-            type="number"
-            name="quantita"
-            ngModel
-            [(ngModel)]="g.quantita"
-            class="form-control"
-            placeholder="0"
-          />
-        </div>
-        <button
-          type="submit"
-          class="cart_btn mt-4"
-          (click)="formularioAcquisto(g)"
-        >
-          Acheter
-        </button>
-      </form>
-      <!-- button per comprare -->
-      <!-- <button type="button" class="cart_btn mt-4" (click)="formularioAcquisto(g)">Formulario </button> -->
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ***************************formulario acquisto ***************************************-->
-<!-- <div *ngIf="showMe"> -->
-
-<!-- ngif serve per poter far apparire il mio formulario a determinate condizioni,
-      in questo caso se clicco sul pulsante aggiungi al carrello più in alto 
-      questo formulario appare. il metodo showMe lo metto poi nel ts, lo dichiaro come un boolean 
-      showMe: boolean= false; lo metto in false per far capire che non deve apparire con l'apertura della pagina 
-      ma solo quando ci clicco sopra. per dare un boolean true basta mettere un ! davanti 
-      formulaire (g:any){
-          this.showMe = !this.showMe
-        }-->
-
-<!-- <div class="container mt-4" > 
-      <form (ngSubmit)="AggiungereOrdine(ordinihtml)"#ordinihtml="ngForm"></form>
-      <div class="row">
-        <div class="col-md-4 offset-md-4">
-          <div class="card">
-            <div class="card-header">
-        <h5 class="text-center">Acquista</h5> 
-            </div>
-            
-              <div class="form-group">
-              <label for="nom">Titolo dell'Opera</label>
-              <input type="text"ngModel required>
-            </div>
-      
-            <div class="form-group">
-               <label for="nom"> Quantità</label>
-              <input type="text"ngModel required > 
-            </div>
-            
-            
-            <div class="form-group">
-              <label for="nom">Totale</label>
-              <input type="text" ngModel required >  
-            </div>
-      
-            <div class="form-group">
-              <label for="nom">Nome e Cognome</label>
-              <input type="text" ngModel required >
-
-            </div>
-      
-            <div class="form-group">
-              <label for="nom">Email</label>
-              <input type="text" ngModel required  > 
-            </div>
-
-            
-            <div class="form-group">
-              <label for="nom">Indirizzo</label>
-              <input type="text" ngModel required >  
-            </div>
-
-            <div class="form-group">
-              <label for="nom">Città</label>
-              <input type="text" ngModel required> 
-            </div>
-
-            <div class="form-group">
-              <label for="nom">Paese</label>
-              <input type="text" ngModel required>
-            </div>
-      
-            <button class="btn btn-warning">Invia</button>
-          
-          </div>
-        </div>
-      </div>
-      </div>
-    </div> -->
-
-<!-- ESEMPIO PER RIMPIAZZARE LE CARDS -->
-
-<!-- <div class="container mt-4"> -->
-
-<!--   <div class="card card-block mb-2">
-          <h4 class="card-title">Card 1</h4>
-          <p class="card-text">Welcom to bootstrap card styles</p>
-          <a href="#" class="btn btn-primary">Submit</a>
-        </div>   -->
-
-<!-- <div class="row" *ngFor="let g of galleryTs">
-          <div class="col-md-3 col-sm-6">
-            <div class="card card-block" >
-            <h4 class="card-title text-right"><i class="material-icons">L'ARTE DELLE TERRE | THE ART OF LANDS</i></h4>
-          <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset">
-          <h5 class="card-title">{{g.opera}}</h5>
-          <p class="card-text"> Descrizione d'artista: {{g.descrizione}}</p>
-          <p class="card-text">Prezzo: {{g.prezzo}}</p>
-          <p class="card-text">Disponibilità: {{g.disponibilita}}</p> -->
-<!-- button per comprare -->
-<!-- <form class="form-inline">
-           <div class="form-group mx-sm-3 mb-2">
-             <input type="number" class="form-control" placeholder="1">
-           </div>
-      <button type="submit" class="cart_btn mt-4" (click)="formularioAcquisto(g)">Acquista</button>
-    </form>
-            </div>
-            </div>
-            </div>
-      </div> -->
-
-<!-- ESEMPIO 2 PER RIMPIAZZARE LE CARDS link  https://bbbootstrap.com/snippets/bootstrap-5-shopping-card-hover-and-carousel-images-96302166-->
-
-<!--ESEMPIO 3 PER RIMPIAZZARE LE CARDS link https://bbbootstrap.com/snippets/bootstrap-ecommerce-single-product-page-image-carousels-41782754-->
+<!-- ***************************fin cards oeuvres ***************************************-->

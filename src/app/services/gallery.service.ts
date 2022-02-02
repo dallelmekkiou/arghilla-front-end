@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core'
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class GalleryService {
   url = 'http://localhost:8080/oeuvres'
   url1 = 'http://localhost:8080'
+  url2 = 'http://localhost:8080/categories'
 
   constructor(private http: HttpClient) {}
 
@@ -14,6 +15,10 @@ export class UsersService {
 
   getGalleryService() {
     return this.http.get(this.url)
+  }
+
+  getCategorieService() {
+    return this.http.get(this.url2)
   }
 
   //******************************************************  REQUETE CRUD POST   ***********************************************
@@ -39,7 +44,7 @@ export class UsersService {
   //******************************************************   REQUETE CRUD PUT   ***********************************************
 
   saveModificationsService(oeuvrehtml: any) {
-    return this.http.put(this.url + '/' + oeuvrehtml.id, oeuvrehtml)
+    return this.http.put(this.url1 + '/editOeuvre/' + oeuvrehtml.id, oeuvrehtml)
   }
 
   registraOrdineService(oeuvrehtml: any) {
