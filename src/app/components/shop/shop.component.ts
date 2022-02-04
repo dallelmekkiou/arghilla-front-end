@@ -27,20 +27,20 @@ export class ShopComponent implements OnInit {
   cliente: any
 
   ngOnInit(): void {
-    this.getOrdini()
+    // this.getOrdini()
   }
 
-  getOrdini() {
-    this.serviceCart.getOrdiniService().subscribe((data) => {
-      this.OrdiniTs = data
-      console.log(this.OrdiniTs)
-    })
-  }
-  saveInformazioni(cliente: any) {
-    console.log(cliente.value)
-    let data = cliente.value
-    this.serviceCart.saveInformazioniService(data).subscribe((data) => {
-      console.log("L'opera è stata registrata nell'inventario")
-    })
-  }
+  // getOrdini() {
+  //   this.serviceCart.getOrdiniService().subscribe((data) => {
+  //     this.OrdiniTs = data
+  //     console.log(this.OrdiniTs)
+  //   })
+  // }
+  // saveInformazioni(cliente: any) {
+  //   console.log(cliente.value)
+  //   let data = cliente.value
+  //   this.serviceCart.saveInformazioniService(data).subscribe((data) => {
+  //     console.log("L'opera è stata registrata nell'inventario")
+  //   })
+  // }
 }

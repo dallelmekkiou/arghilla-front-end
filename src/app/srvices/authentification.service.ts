@@ -8,8 +8,8 @@ export class AuthentificationService {
 
   constructor(private http:HttpClient) { }
 
-  url="http://localhost:8099/utilisateurs";
-  url2="http://localhost:8099/utilisateurs/search/"
+  url="http://localhost:8080/utilisateurs";
+  url2="http://localhost:8080/utilisateurs/search/"
 
   authentification: boolean = true //variable de type boolean qui indique si l'user est authentifié ou pas isAuthenticated
   userAuthentifié: any //enregistrer l'user qui s'est authentifié useruthentiated

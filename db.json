@@ -45,5 +45,16 @@
       "città": "Marseille",
       "paese": "Francia"
     }
+  ],
+  "panier": [
+    {
+      "idProduit": 4,
+      "nomProduit": "crème hydratante corps",
+      "image": "../assets/img/creme-hydratante-corps.jpg",
+      "prix": 15,
+      "quantite": 9,
+      "id": 1
+    }
   ]
+
 }

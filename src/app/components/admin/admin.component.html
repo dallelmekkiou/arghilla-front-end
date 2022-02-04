@@ -1,8 +1,8 @@
 <!-- **********************************************cover della pagina gallery********************************************************************* -->
-
+<div class="container-fluid">
 <section id="hero">
   <div class="inner">
-    <h1>Arghillà Amministratore</h1>
+    <h1>Arghillà Administrateur</h1>
     <p class="text-align">
       Un homme qui travaille avec ses mains est un ouvrier ; un homme qui
       travaille <br />
@@ -13,8 +13,86 @@
   </div>
 </section>
 
+
+<!-- ********************************AFFICHAGE DES OEUVRES ******************* -->
+<div class="container mt-4">
+
+  <!-- <div class="row justify-content-center text text-align">
+    <button class="btn btn-outline-dark mt-4" type="button" (click)="ShowAddForms()">Nouvelle Oeuvre</button>
+    <div class=" card col-4 mt-4 border border-dark" 
+    *ngFor="let g of galleryAdmin._embedded.oeuvres"> -->
+
+        <!-- <img style=" height :400px; " src="../../../assets/gallery/products/{{g.image}}" alt="" class="card-img-top w-150">
+        <div class="md-8">
+            <div class="card-body border-dark">
+                <p class="card-title text-center text-secondary">{{ g.nom }}</p>
+                <p class="card-text">Description: {{ g.description }}</p>
+                <small class="text-muted">Categorie: {{ g.categorie }}<br></small>
+                <small class="text-muted">Prix: {{ g.prix }}</small>
+                <small class="text-muted">Disponibilité: {{ g.disponibilite }} -->
+                  <!-- <button (click)="patchOpera(g)">
+                    <span -->
+                      <!-- [ngClass]="{
+                        'far fa-thumbs-up text-success': g.disponible,
+                        'fas fa-thumbs-down text-danger': !g.disponible
+                      }" --> 
+                    <!-- ></span>
+                  </button>
+                </small>
+
+            </div>
+            <div class=""> -->
+                <!-- <i class="far fa-edit" type="button" (click)="editOeuvre(g)"></i>
+                <i class="far fa-trash-alt" type="button"
+                (click)="deleteOeuvre(g.id)"></i>
+      
+            </div>
+        </div>
+    </div> -->
+<!-- *****************cards************************ -->
+<div class="container text-center">
+  <h1>Gallerie</h1>
+    <a class="wsk-btn" type="button" (click)="ShowAddForms()">+Gallerie</a>
+  </div>
+  <div class="shell">
+    <div class="container">
+        
+      <div class="row justify-content-center text text-align">
+          <div class="card col-md-3 mx-2 mb-4 " *ngFor="let g of galleryAdmin._embedded.oeuvres">
+          <div class="wsk-cp-product " >
+            <div class="wsk-cp-img">
+              <img src="../../../assets/gallery/products/images/{{g.image}}" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>{{ g.nom }}</span>
+              </div>
+              <!-- <div class="title-product"> -->
+                <!-- <h3>{{ g.nom }}</h3> -->
+              <!-- </div> -->
+              <p>{{ g.description }}</p>
+              <div class="description-prod">
+                <p>Prix {{ g.prix }}</p>
+              </div>
+              <div class="card-footer">
+                <!-- <div class="wcf-left"><span class="price">{{ g.prix }}</span></div> -->
+                <div class="category"><span type="button" (click)="editOeuvre(g)">Modifier</span></div>
+                <div class="category"><span  type="button" (click)="deleteOeuvre(g.id)">Supprimer</span></div>
+                <!-- <div class="wcf-right"><a href="#" class="buy-btn">
+                  
+                  <i class="fas fa-shopping-basket"> </i>
+                </a></div> -->
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+    
 <!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD POST       ************************* -->
-<h3 class="text-center text-dark mt-4">Ajouter une oeuvre à l'inventaire</h3>
+<ng-container *ngIf="showAddForms" id=addForms>
+<h1 class="text-center text-dark mt-4">Ajouter une oeuvre à l'inventaire</h1>
 
 <!-- **********************         FORMS             ************************ -->
 
@@ -22,315 +100,95 @@
   <ul>
     <li>
       <!-- *****************         Nom de l'œuvre              **************************-->
-      <input
-        type="text"
-        name="nom"
-        class="field-style field-split align-left"
-        placeholder="Nom de l'oeuvre"
-        ngModel
-        required
-        minlength="4"
-        maxlength="50"
-      />
+      <input type="text" name="nom" class="field-style field-split align-left" placeholder="Nom de l'oeuvre"
+        ngModel required minlength="4" maxlength="50">
 
       <!-- *****************                  categorie                         **************************-->
-
-      <select name="categorie" class="mt-2">
+      <select name="categorie" class="mt-2" placeholder="--Choisissez une categorie--" ngModel required >
         <option value="categorie">--Choisissez une categorie--</option>
-        <option value="c" *ngFor="let c of categorieAdmin._embedded.categories">
-          {{ c.nom }}
-        </option>
+        <option value={{c.id}} *ngFor="let c of categorieAdmin._embedded.categories">{{ c.nom }}</option>
+        
       </select>
 
       <!-- *****************                   Prix                          **************************-->
     </li>
-
     <li>
-      <input
-        type="number"
-        name="prix"
-        class="field-style field-split align-left"
-        placeholder="Prix"
-        ngModel
-        required
-      />
+      <input type="number" name="prix" class="field-style field-split align-left" placeholder="Prix" ngModel required>
       <!-- *****************                quantité                          ***************************-->
-      <input
-        type="number"
-        name="quantite"
-        class="field-style field-split align-right"
-        placeholder="Quantité"
-        ngModel
-        required
-      />
+      <input type="number" name="quantite" class="field-style field-split align-right" placeholder="Quantité" ngModel required> 
     </li>
     <!-- *****************                disponibilité                          ***************************-->
     <input
-      type="checkbox"
-      checked
-      name="disponibilite"
-      class="field-style field-split align-right"
-      placeholder="Disponibilite"
-      ngModel
-      required
-    />
+      type="checkbox" checked name="disponibilite" class="field-style field-split align-right" placeholder="Disponibilite" ngModel required>
     <!-- *****************                Image                          **************************-->
     <li>
-      <input
-        type="text"
-        name="image"
-        class="field-style field-full align-none"
-        placeholder="Image"
-        ngModel
-        required
-      />
+      <input type="text" name="image" class="field-style field-full align-none" placeholder="Image" ngModel required>
     </li>
 
     <!-- *****************           Description de l'œuvre              **************************-->
     <li>
-      <textarea
-        name="field5"
-        class="description"
-        placeholder="Description"
-        ngModel
-        required
-        minlength="1"
-        maxlength="100"
-      ></textarea>
+      <textarea name="description" class="description" placeholder="Description" ngModel required minlength="1" maxlength="100"></textarea>
     </li>
     <li>
-      <input type="submit" value="Enregistrer" />
+      <!-- <a class="wsk-btn" type="submit">Enregistrer</a> -->
+      <button class="wsk-btn" type="submit" value="Enregistrer">Enregistrer</button>
     </li>
   </ul>
 </form>
+</ng-container>
 
 <!-- *****   FIN formulaire   ***** -->
 
-<!-- ********************************AFFICHAGE DES OEUVRES ******************* -->
-<div class="containair mt-4">
-  <div class="row">
-    <div class="card-group col-8">
-      <div class="card" *ngFor="let g of galleryAdmin._embedded.oeuvres">
-        <img src="" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ g.nom }}</h5>
-          <p class="card-text">Description: {{ g.description }}</p>
-          <p class="card-text">Prix: {{ g.prix }}</p>
-          <p class="card-text">
-            Disponibilité: {{ g.disponibilite }} -->
-
-            <!-- modificazione della disponibilità con ngClass e il dito ok o ko ************** -->
-            <button (click)="patchOpera(g)">
-              <span
-                [ngClass]="{
-                  'far fa-thumbs-up text-success': g.disponible,
-                  'fas fa-thumbs-down text-danger': !g.disponible
-                }"
-              ></span>
-            </button>
-          </p>
-          <div class="form-group row">
-            <div class="col-md-6">
-              <!-- boutton delete -->
-              <button
-                type="button"
-                id="btnSubmit"
-                class="btn form-control btn-sm"
-                (click)="deleteOeuvre(g.id)"
-              >
-                Supprimer
-              </button>
-            </div>
-            <div class="col-md-6">
-              <!-- pulsante modifica -->
-
-              <button
-                class="btn form-control btn-sm"
-                id="btnSubmit"
-                type="button"
-                (click)="formulaireModifications(g)"
-              >
-                Modifier
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
-  <!-- <div class="container">
-    <form class="form-style-9">
-      
+  <ng-container *ngIf="showEditForms" id=formsEdit>
+    <div class="container-fluid mt-4">
 
-      <div class="row">
-        <div class="col-md-4 offset-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="text-center">
-                Formulario modificante le informazioni dell'opera selezionata
-              </h5>
-            </div>
+      <h1 class="text-center mt-4">Modifier Oeuvre</h1>
 
+      <form (ngSubmit)="saveModifications()">
+          <fieldset>
+            <label class="col-form-label mt-4" for="image">Lien de l'image</label>
             <div class="form-group">
-              <label for="id">Id de l'oeuvre</label>
-
-              <input type="text" name="id" [(ngModel)]="oeuvrehtml.id" />
-              <p>{{ oeuvrehtml.id }}</p>
+                <input class="form-control" name="image" [(ngModel)]="oeuvrehtml.image">
             </div>
+              <label class="col-form-label mt-4" for="id">Id</label>
+              <div class="form-group">
+                  <input class="form-control" name="id" [disabled]="true"
+                      [(ngModel)]="oeuvrehtml.id">
+              </div>
+              <label class="col-form-label mt-4" for="nom">Nom </label>
+              <div class="form-group">
+                  <input class="form-control" name="nom" [(ngModel)]="oeuvrehtml.nom">
+              </div>
+              <label class="col-form-label mt-4" for="description">Description</label>
+              <div class="form-group">
+                  <input class="form-control" name="description"
+                      [(ngModel)]="oeuvrehtml.description">
+              </div>
+              <label class="col-form-label mt-4" for="disponibilite">Disponibilite</label>
+              <div class="form-group">
+                  <input class="form-control" name="disponibilite" [(ngModel)]="oeuvrehtml.disponibilite">
+              </div>
+              <label class="col-form-label mt-4" for="prix">Prix</label>
+              <div class="form-group">
+                  <input class="form-control" name="prix" [(ngModel)]="oeuvrehtml.prix">
+              </div>
+              <label class="col-form-label mt-4" for="quantite">Quantité</label>
+              <div class="form-group">
+                  <input class="form-control" name="quantite" [(ngModel)]="oeuvrehtml.quantite">
+              </div>
+              <!-- <label class="col-form-label mt-4" for="categorie">Catégorie</label>
+              <div class="form-group">
+                  <input class="form-control" name="categorie" [(ngModel)]="oeuvrehtml.categorie">
+              </div> -->
 
-            <div class="form-group">
-              <label for="nom">Nom de l'oeuvre</label>
-              <input type="text" name="nom" [(ngModel)]="oeuvrehtml.nom" />
-              <p>{{ oeuvrehtml.nom }}</p>
-            </div>
+              <button type="submit" class="btn btn-outline-dark">Valider</button>
+          </fieldset>
 
-            <div class="form-group">
-              <label for="description">Descrizione dell'opera</label>
-              <input
-                type="text"
-                name="description"
-                [(ngModel)]="oeuvrehtml.description"
-              />
-              <p>{{ oeuvrehtml.description }}</p>
-            </div>
-
-            <div class="form-group">
-              <label for="prix">Prezzo</label>
-              <input type="text" name="prix" [(ngModel)]="oeuvrehtml.prix" />
-              <p>{{ oeuvrehtml.prix }}</p>
-            </div>
-
-            <div class="form-group">
-              <label for="quantite">Esemplari restanti</label>
-              <input
-                type="text"
-                name="quantite"
-                [(ngModel)]="oeuvrehtml.quantite"
-              />
-              <p>{{ oeuvrehtml.quantite }}</p>
-            </div>
-
-            <div class="form-group">
-              <label for="image">Immagine</label>
-              <input type="text" name="image" [(ngModel)]="oeuvrehtml.image" />
-              <p>{{ oeuvrehtml.image }}</p>
-            </div>
-
-            <div class="form-group">
-              <label for="categorie">Immagine</label>
-              <input
-                type="text"
-                name="categorie"
-                [(ngModel)]="oeuvrehtml.categorie"
-              />
-              <p>{{ oeuvrehtml.categorie }}</p>
-            </div>
-
-            <button
-              class="btn btn-warning"
-              type="submit"
-              (click)="saveModifications()"
-            >
-              Enregistrer
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
   </div>
-</div> -->
-
-  <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
-
-  <div class="container mt-4" *ngIf="showMe">
-    <form>
-      <fieldset>
-        <legend>Formulaire de Modification</legend>
-
-        <div class="form-group">
-          <label for="image">Image</label>
-          <input
-            type="text"
-            name="image"
-            [(ngModel)]="oeuvrehtml.image"
-            class="form-control"
-            id="nom"
-            placeholder="https://www.aixenprovence.fr/local/cache-gd2/a5/20bd008f32f9015e71da76efda06dc.jpg?1583329035"
-          />
-          <!-- <p>{{ g.image }}</p> -->
-        </div>
-
-        <div class="form-group">
-          <label for="nom">Nom</label>
-          <input
-            type="text"
-            name="nom"
-            [(ngModel)]="oeuvrehtml.nom"
-            class="form-control"
-            id="email"
-            placeholder="Les visages sans masque"
-          />
-          <!-- <p>{{ g.nom }}</p> -->
-        </div>
-
-        <div class="form-group">
-          <label for="descripion">Description</label>
-          <input
-            type="text"
-            name="description"
-            [(ngModel)]="oeuvrehtml.description"
-            class="form-control"
-            id="email"
-            placeholder="Cette oeuvre est faconnée dans l'argille du Poro, réputée"
-          />
-          <!-- <p>{{ g.description }}</p> -->
-        </div>
-
-        <div class="form-group">
-          <label for="prix">Prix</label>
-          <input
-            type="text"
-            name="prix"
-            [(ngModel)]="oeuvrehtml.prix"
-            class="form-control"
-            id="email"
-            placeholder="150 euros"
-          />
-          <!-- <p>{{ g.prix }}</p> -->
-        </div>
-
-        <div class="form-group">
-          <label for="email">Quantité</label>
-          <input
-            type="number"
-            name="quantite"
-            [(ngModel)]="oeuvrehtml.quantite"
-            class="form-control"
-            id="email"
-            placeholder="0"
-          />
-          <!-- <p>{{ g.quantite }}</p> -->
-        </div>
-
-        <!-- <div class="form-group">
-          <label for="email">Categorie</label>
-          <input
-            type="text"
-            name="horaire"
-            [(ngModel)]="oeuvrehtml.categorie"
-            class="form-control"
-            id="email"
-            placeholder="pierre.giraud@edhec.com"
-          /> -->
-        <!-- <p>{{t.horaire}}</p> -->
-        <!-- </div> -->
-
-        <button class="btn btn-outline-warning" (click)="saveModifications()">
-          Enregistrer
-        </button>
-      </fieldset>
-    </form>
-  </div>
+</ng-container>
 </div>
+</div>
+

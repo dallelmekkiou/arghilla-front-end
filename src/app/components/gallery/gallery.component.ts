@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { UsersService } from 'src/app/services/users.service'
+import { CartService } from 'src/app/services/cart.service'
+
 
 @Component({
   selector: 'app-gallery',
@@ -18,7 +20,7 @@ export class GalleryComponent implements OnInit {
     categorie: '',
   }
 
-  constructor(private service: UsersService) {}
+  constructor(private service: UsersService, private cartService:CartService) {}
 
   galleryTs: any //variabile locale
 
@@ -26,9 +28,7 @@ export class GalleryComponent implements OnInit {
   totale: any
 
   ngOnInit(): void {
-    this.getGallery()
-
-    
+    this.getGallery() 
   }
 
   getGallery() {
@@ -38,32 +38,22 @@ export class GalleryComponent implements OnInit {
     })
   }
 
-  piu(g: any) {
-    console.log(g)
-  }
+   // ********************Partie Panier************************
+// methode qui ajoute les produit dans le panier et l'enregistre dans db.json
 
-  meno(g: any) {
-    console.log(g)
-  }
-
-  // formularioAcquisto(g: any) {
-  //   this.showMe = true
-  //   this.totale = g.prezzo * g.quantita
-  //   console.log(this.totale)
-  // }
-
-  // registraOrdine() {
-  //   this.service.registraOrdineService(this.ordinihtml).subscribe((data) => {
-  //     console.log('Le modifiche sono state effettuate!')
-  //     // (this. ordinihtml) this è per dire che stiamo su una variabile locale
-  //   })
-  // }
-
-  // AggiungereOrdine(ordinihtml: any) {
-  //   console.log(ordinihtml.value)
-  //   let data = ordinihtml.value
-  //   this.service.registraOrdineService(data).subscribe((data) => {
-  //     console.log("L'ordine è stato registrato")
-  //   })
-  // }
+// addOeuvreCart( oeuvre:any): void {
+//   console.log()
+//   let preCart = {
+//       idOeuvre: oeuvre.id,
+//       nomOeuvre:oeuvre.nomProduit,
+//       image:oeuvre.image,
+//       prix:oeuvre.prix,
+//       quantite:'1'
+//   };
+//   console.log(preCart)
+//   this.cartService.addCart(preCart).subscribe(reponse => {
+//     alert("oeuvre ajouté au panier avec succès !")
+//     this.getGallery()
+//   });
+// }
 }

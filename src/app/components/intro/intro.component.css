@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.container-fluid {
+  margin: 0;
+  background-color: black;
+  font-family: sans-serif;
+}
+/* .navbar-nav{
+    margin: 0;
+    background: rgb(7, 0, 0);
+    
+    font-family: sans-serif;  
+} */
+
+.nav-link{
+  color:aliceblue;
+}
+
+
+.container {
+  background-color: black;
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
+}
+.carousel__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  /* box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5); */
+  display: flex;
+}
+
+span {
+  margin: auto;
+  font-size: 2rem;
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reggiotoday.it%2Fattualita%2Farghilla-bottega-arte-terre-tripodi.html&psig=AOvVaw2mGorAqaOqG3iz9nf_MEA3&ust=1643741889661000&source=images&cd=vfe&ved=2ahUKEwiu0-Ds1dz1AhWMwuAKHfHbA8EQjRx6BAgAEAk");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("http://2.bp.blogspot.com/-dT7iBK-S_8M/VDzpeearxBI/AAAAAAAAA8I/wkL_hzmZRNY/s1600/11187_10151428207711893_1602797833_n.jpg");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("https://citynews-reggiotoday.stgy.ovh/~media/horizontal-hi/69133553017208/arghilla-4.jpg");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("https://materceramica.org/wp-content/uploads/2018/11/7.jpg");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("http://2.bp.blogspot.com/-dT7iBK-S_8M/VDzpeearxBI/AAAAAAAAA8I/wkL_hzmZRNY/s1600/11187_10151428207711893_1602797833_n.jpg");
+ transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("https://www.calabriaonweb.it/images/capre.jpg");
+ transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("https://www.arghilla.com/images/opere/CA-CANDELABRI/quadrate/2-capra.jpg");
+ transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("https://www.calabriaonweb.it/images/sposiweb.jpg");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("https://www.arghilla.com/images/about-us/about-us-arghilla-2.jpg");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+

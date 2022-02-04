@@ -5,10 +5,13 @@ import { AdminComponent } from './components/admin/admin.component'
 import { AuthentificationComponent } from './components/authentification/authentification.component'
 import { GalleryComponent } from './components/gallery/gallery.component'
 import { HomeComponent } from './components/home/home.component'
+import { IntroComponent } from './components/intro/intro.component'
 import { ShopComponent } from './components/shop/shop.component'
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: IntroComponent },
+  { path: 'arguilla', component: IntroComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'admin', component: AdminComponent },

@@ -9,7 +9,8 @@ import { AdminComponent } from './components/admin/admin.component'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './components/about/about.component';
-import { AuthentificationComponent } from './components/authentification/authentification.component'
+import { AuthentificationComponent } from './components/authentification/authentification.component';
+import { IntroComponent } from './components/intro/intro.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthentificationComponent } from './components/authentification/authent
     AdminComponent,
     AboutComponent,
     AuthentificationComponent,
+    IntroComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

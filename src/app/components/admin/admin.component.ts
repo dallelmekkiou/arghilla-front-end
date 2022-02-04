@@ -12,11 +12,14 @@ export class AdminComponent implements OnInit {
     nom: '',
     description: '',
     image: '',
-    prix: 0,
-    quantite: 0,
-    disponibilite: false,
-    categorie: '',
+    prix: '',
+    quantite: '',
+    disponibilite: '',
+    categorie: {}
   }
+  
+ 
+
 
   // è qui che devo dichiarare la route per il servizio correlato, metto prima pubblico o privato
   // poi do un nome a cazzo di cane per dire che è uguale al nome del component del servizio a cuio voglio
@@ -27,20 +30,29 @@ export class AdminComponent implements OnInit {
   galleryAdmin: any //variabile locale
 
   categorieAdmin: any
+  categorie:any
+  categorieById:any
 
-  showMe: boolean = false
+  showEditForms= false
+  showAddForms= false
 
   ngOnInit(): void {
     this.getGalleryAdmin()
     this.getCategorieAdmin()
   }
 
+  ShowAddForms(){
+    this.showAddForms=true
+  }
+
   //******************************************************   REQUETE CRUD GET OEUVRE  ***********************************************
+  
 
   getGalleryAdmin() {
     this.service.getGalleryService().subscribe((data) => {
       this.galleryAdmin = data
-      console.log(this.galleryAdmin)
+      // console.log(this.galleryAdmin)
+      // console.log('disponibilite',this.galleryAdmin._embedded.oeuvres)
     })
   }
   //******************************************************   REQUETE CRUD GET CATEGORIE  ***********************************************
@@ -50,22 +62,31 @@ export class AdminComponent implements OnInit {
       console.log(this.galleryAdmin)
     })
   }
+  // getCategorieId(id:any) {
+  //   this.service.getCategorieServiceId(id).subscribe((data) => {
+  //     this.categorieById = data
+  //     console.log(this.categorieById)
+  //   })
+  // }
+
 
   //******************************************************  REQUETE CRUD POST   ***********************************************
 
   addOeuvre(oeuvre: any) {
-    console.log(oeuvre.value)
+   
     let data = oeuvre.value
+    this.service.getCategorieServiceId(data.categorie).subscribe((response) => {
+      data.categorie = response
     this.service.addOeuvreService(data).subscribe((resp) => {
-      console.log("L'opera è stata registrata nell'inventario")
     })
+  })
   }
 
   //******************************************************   REQUETE CRUD PATCH   ***********************************************
   patchOpera(galleryAdmin: any) {
     console.log(!galleryAdmin.available)
     this.service.patchOperaService(galleryAdmin).subscribe((data) => {
-      console.log("L'attuale disponibilità del prodotto è stata registrata")
+     
       galleryAdmin.available = !galleryAdmin.available
     })
   }
@@ -78,10 +99,14 @@ export class AdminComponent implements OnInit {
   }
 
   editOeuvre(g: any) {
-    console.log('coucou')
-
-    this.showMe = true
-    this.galleryAdmin = g
+    this.showEditForms = true
+    this.oeuvrehtml = g
+    console.log('href',g._links.categorie.href)
+    this.service.getCategorie(g._links.categorie.href).subscribe((data) => {
+      this.oeuvrehtml.categorie = data
+      console.log('categorie',this.oeuvrehtml.categorie)
+      console.log(g)
+    })
   }
 
   // qui sto dicendo che al click il metodo formulario modifica deve apparire con showMe

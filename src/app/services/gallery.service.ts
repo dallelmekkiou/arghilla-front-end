@@ -21,6 +21,14 @@ export class GalleryService {
     return this.http.get(this.url2)
   }
 
+  getCategorie(href:any){
+    return this.http.get(href)
+  }
+
+  getCategorieServiceId(id:any){
+    return this.http.get(this.url2+'/'+id)
+  }
+
   //******************************************************  REQUETE CRUD POST   ***********************************************
 
   addOeuvreService(oeuvre: any) {

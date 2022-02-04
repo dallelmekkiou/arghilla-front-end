@@ -1,5 +1,5 @@
 <!-- **********************************************cover della pagina gallery********************************************************************* -->
-
+<div class="container-fluid">
 <section id="hero">
   <div class="inner">
     <h1>Arghillà Gallerie</h1>
@@ -85,5 +85,42 @@
 </div>
 
 <!-- *******************************cards products methode *ngFor********************** -->
-
+<div class="container mt-4">
+<div class="container text-center">
+  <h1>Gallerie</h1>
+  </div>
+  <div class="shell">
+    <div class="container">
+        
+      <div class="row justify-content-center text text-align">
+        <div class="card col-md-3 mx-2 mb-4" *ngFor="let g of galleryTs._embedded.oeuvres">
+          <div class="wsk-cp-product" >
+            <div class="wsk-cp-img">
+              <img src="../../../assets/gallery/products/images/{{g.image}}" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>{{ g.nom }}</span>
+              </div>
+              <!-- <div class="title-product"> -->
+                <!-- <h3>{{ g.nom }}</h3> -->
+              <!-- </div> -->
+              <p>{{ g.description }}</p>
+              
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">{{ g.prix }}</span></div>
+               
+                <div class="wcf-right"><a href="#" class="buy-btn"> 
+                  
+                  <i class="fas fa-shopping-basket"> </i>
+                </a></div> 
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ***************************fin cards oeuvres ***************************************-->
+</div>

@@ -6,12 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 
-  constructor(private http: HttpClient) { }
-
-  getOrdiniService() {
-    return this.http.get('http://localhost:3000/ordini')
-  }
-  saveInformazioniService(clienti: any) {
-    return this.http.post('http://localhost:3000/ordini',clienti)
-  }
+  constructor(private http:HttpClient) { }
+  // addCart(panier:any){
+  //   return this.http.post("http://localhost:3000/panier", panier);
+  // }
 }
