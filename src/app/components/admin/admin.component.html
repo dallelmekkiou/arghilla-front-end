@@ -104,6 +104,12 @@
           </div>
         </div>
       </div>
+     <!-- la pagination -->
+        <ul class="pagination " *ngFor=" let  p of page">
+          <li class="page-item" aria-current="page">
+            <span class="page-link" (click)="paginer(p)">{{p}}</span>
+          </li>
+        </ul>
     </div>
 
     <!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD POST       ************************* -->

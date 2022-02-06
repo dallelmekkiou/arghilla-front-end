@@ -13,8 +13,8 @@ export class GalleryService {
 
   //******************************************************   REQUETE CRUD GET   ***********************************************
 
-  getGalleryService() {
-    return this.http.get(this.url)
+  getGalleryService(nbrPage:any) {
+    return this.http.get("http://localhost:8080/oeuvres?page="+nbrPage+"&size=2")
   }
 
   getCategorieService() {

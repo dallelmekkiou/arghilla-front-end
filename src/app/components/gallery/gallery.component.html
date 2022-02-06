@@ -120,8 +120,14 @@
                   </div>
 
                   <div class="wcf-right">
-                    <a href="#" class="buy-btn">
-                      <i class="fas fa-shopping-basket"> </i>
+                    <a class="buy-btn" type="button">
+                      <!-- <a  class="btn btn-secondary" id="basket"><i class="fas fa-shopping-basket" (click)="ajouterProduitAuPanier(produit)"></i></a> -->
+
+                      <i
+                        class="fas fa-shopping-basket"
+                        type="button"
+                        (click)="addOeuvreCart(g)"
+                      ></i>
                     </a>
                   </div>
                 </div>
@@ -129,9 +135,15 @@
             </div>
           </div>
         </div>
+        <!-- la pagination -->
+        <ul class="pagination" *ngFor="let p of page">
+          <li class="page-item" aria-current="page">
+            <span class="page-link" (click)="paginer(p)">{{ p }}</span>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <!-- ***************************fin cards oeuvres ***************************************-->
+    <!-- ***************************fin cards oeuvres ***************************************-->
+  </div>
 </div>
