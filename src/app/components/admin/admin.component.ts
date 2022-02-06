@@ -15,11 +15,8 @@ export class AdminComponent implements OnInit {
     prix: '',
     quantite: '',
     disponibilite: '',
-    categorie: {}
+    categorie: {},
   }
-  
- 
-
 
   // è qui che devo dichiarare la route per il servizio correlato, metto prima pubblico o privato
   // poi do un nome a cazzo di cane per dire che è uguale al nome del component del servizio a cuio voglio
@@ -30,23 +27,23 @@ export class AdminComponent implements OnInit {
   galleryAdmin: any //variabile locale
 
   categorieAdmin: any
-  categorie:any
-  categorieById:any
+  categorie: any
+  categorieById: any
 
-  showEditForms= false
-  showAddForms= false
+  showEditForms = false
+  showAddForms = false
 
   ngOnInit(): void {
     this.getGalleryAdmin()
     this.getCategorieAdmin()
   }
 
-  ShowAddForms(){
-    this.showAddForms=true
+  ShowAddForms() {
+    this.showAddForms = true
+   
   }
 
   //******************************************************   REQUETE CRUD GET OEUVRE  ***********************************************
-  
 
   getGalleryAdmin() {
     this.service.getGalleryService().subscribe((data) => {
@@ -69,24 +66,20 @@ export class AdminComponent implements OnInit {
   //   })
   // }
 
-
   //******************************************************  REQUETE CRUD POST   ***********************************************
 
   addOeuvre(oeuvre: any) {
-   
     let data = oeuvre.value
     this.service.getCategorieServiceId(data.categorie).subscribe((response) => {
       data.categorie = response
-    this.service.addOeuvreService(data).subscribe((resp) => {
+      this.service.addOeuvreService(data).subscribe((resp) => {})
     })
-  })
   }
 
   //******************************************************   REQUETE CRUD PATCH   ***********************************************
   patchOpera(galleryAdmin: any) {
     console.log(!galleryAdmin.available)
     this.service.patchOperaService(galleryAdmin).subscribe((data) => {
-     
       galleryAdmin.available = !galleryAdmin.available
     })
   }
@@ -101,10 +94,10 @@ export class AdminComponent implements OnInit {
   editOeuvre(g: any) {
     this.showEditForms = true
     this.oeuvrehtml = g
-    console.log('href',g._links.categorie.href)
+    console.log('href', g._links.categorie.href)
     this.service.getCategorie(g._links.categorie.href).subscribe((data) => {
       this.oeuvrehtml.categorie = data
-      console.log('categorie',this.oeuvrehtml.categorie)
+      console.log('categorie', this.oeuvrehtml.categorie)
       console.log(g)
     })
   }

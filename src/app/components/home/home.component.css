@@ -3,6 +3,8 @@
   margin-right: auto;
   width: 1400px;
 } */
+
+
 #hero {
     position: relative;
     height: 100vh;
@@ -13,7 +15,7 @@
     display: flex;
     align-items: center;
     padding: 0 60px;
-    margin-top: 7%;
+    margin-top: 3%;
   }
 
 
@@ -28,8 +30,18 @@
   }
 
 
-
-  p    {font-size: 25px;}
+  p {
+    font-size: larger
+  }
+  
+  #anglais {
+    font-size: larger
+  }
+  
+  #firstLetter{
+  font-size: xx-large;
+  color: darkorange;
+}
 
 
 /* IMMAGINI */
@@ -46,10 +58,10 @@
   
 }
 
-.img_1-1{background-image:url('https://www.arghilla.com/images/opere/lampade-LA.jpg');}
+.img_1-1{background-image:url('https://citynews-reggiotoday.stgy.ovh/~media/original-hi/20176621493526/arghilla5.jpg');}
 .img_1-3{background-image:url('https://www.arghilla.com/images/opere/CO-CONTENITORI/quadrate/friscanzana-nu.jpg');}
 .img_1-2{background-image:url('https://materceramica.org/wp-content/uploads/2018/11/9.jpg');}
-.img_2-1{background-image:url('https://www.arghilla.com/images/opere/luoghi-LU.jpg');}
+.img_2-1{background-image:url('https://citynews-reggiotoday.stgy.ovh/~media/original-hi/2641037272868/arghilla7.jpg');}
 .img_2-3{background-image:url('https://citynews-reggiotoday.stgy.ovh/~media/horizontal-mid/7405242744711/arghilla.jpg');}
 .img_2-2{background-image:url('https://www.reggiotoday.it/~media/horizontal-hi/2024100237886/nicola-tripodi-2.jpg');}
 .img_3-1{background-image:url('https://www.calabriatheotheritaly.com/wp-content/uploads/2018/10/Mask-with-ciarameddaru.jpg');}

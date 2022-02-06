@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+
+
 .container-fluid {
   margin: 0;
   background-color: black;
   font-family: sans-serif;
+  margin-top: 3%;
 }
-/* .navbar-nav{
-    margin: 0;
-    background: rgb(7, 0, 0);
-    
-    font-family: sans-serif;  
-} */
+
 
 .nav-link{
   color:aliceblue;

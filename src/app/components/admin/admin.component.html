@@ -1,28 +1,32 @@
 <!-- **********************************************cover della pagina gallery********************************************************************* -->
 <div class="container-fluid">
-<section id="hero">
-  <div class="inner">
-    <h1>Arghillà Administrateur</h1>
-    <p class="text-align">
-      Un homme qui travaille avec ses mains est un ouvrier ; un homme qui
-      travaille <br />
-      avec ses mains et son ses mains et son cerveau est un artisan ; mais un
-      homme qui travaille <br />
-      avec ses mains, son cerveau et son cœur est un artiste.
-    </p>
-  </div>
-</section>
+  <section id="hero">
+    <div class="inner">
+      <h1>Arghillà Administrateur</h1>
+      <p class="text-align">
+        Un homme qui travaille avec ses mains est un ouvrier ; un homme qui
+        travaille <br />
+        avec ses mains et son ses mains et son cerveau est un artisan ; mais un
+        homme qui travaille <br />
+        avec ses mains, son cerveau et son cœur est un artiste.
+      </p>
+      <p></p>
+      <em class="text-align">
+        A man who works with his hands is a workman; a man who works <br />
+        with his hands and his brain is a craftsman; but a man who works <br />
+        with his hands, his brain and his heart is an artist.
+      </em>
+    </div>
+  </section>
 
-
-<!-- ********************************AFFICHAGE DES OEUVRES ******************* -->
-<div class="container mt-4">
-
-  <!-- <div class="row justify-content-center text text-align">
+  <!-- ********************************AFFICHAGE DES OEUVRES ******************* -->
+  <div class="container mt-4">
+    <!-- <div class="row justify-content-center text text-align">
     <button class="btn btn-outline-dark mt-4" type="button" (click)="ShowAddForms()">Nouvelle Oeuvre</button>
     <div class=" card col-4 mt-4 border border-dark" 
     *ngFor="let g of galleryAdmin._embedded.oeuvres"> -->
 
-        <!-- <img style=" height :400px; " src="../../../assets/gallery/products/{{g.image}}" alt="" class="card-img-top w-150">
+    <!-- <img style=" height :400px; " src="../../../assets/gallery/products/{{g.image}}" alt="" class="card-img-top w-150">
         <div class="md-8">
             <div class="card-body border-dark">
                 <p class="card-title text-center text-secondary">{{ g.nom }}</p>
@@ -30,165 +34,398 @@
                 <small class="text-muted">Categorie: {{ g.categorie }}<br></small>
                 <small class="text-muted">Prix: {{ g.prix }}</small>
                 <small class="text-muted">Disponibilité: {{ g.disponibilite }} -->
-                  <!-- <button (click)="patchOpera(g)">
+    <!-- <button (click)="patchOpera(g)">
                     <span -->
-                      <!-- [ngClass]="{
+    <!-- [ngClass]="{
                         'far fa-thumbs-up text-success': g.disponible,
                         'fas fa-thumbs-down text-danger': !g.disponible
-                      }" --> 
-                    <!-- ></span>
+                      }" -->
+    <!-- ></span>
                   </button>
                 </small>
 
             </div>
             <div class=""> -->
-                <!-- <i class="far fa-edit" type="button" (click)="editOeuvre(g)"></i>
+    <!-- <i class="far fa-edit" type="button" (click)="editOeuvre(g)"></i>
                 <i class="far fa-trash-alt" type="button"
                 (click)="deleteOeuvre(g.id)"></i>
       
             </div>
         </div>
     </div> -->
-<!-- *****************cards************************ -->
-<div class="container text-center">
-  <h1>Gallerie</h1>
-    <a class="wsk-btn" type="button" (click)="ShowAddForms()">+Gallerie</a>
-  </div>
-  <div class="shell">
-    <div class="container">
-        
-      <div class="row justify-content-center text text-align">
-          <div class="card col-md-3 mx-2 mb-4 " *ngFor="let g of galleryAdmin._embedded.oeuvres">
-          <div class="wsk-cp-product " >
-            <div class="wsk-cp-img">
-              <img src="../../../assets/gallery/products/images/{{g.image}}" alt="Product" class="img-responsive" />
-            </div>
-            <div class="wsk-cp-text">
-              <div class="category">
-                <span>{{ g.nom }}</span>
+    <!-- *****************cards************************ -->
+    <div class="container text-center">
+      <h1 id="titre">Gallerie</h1>
+      <a class="wsk-btn" type="button" (click)="ShowAddForms()">+Gallerie</a>
+    </div>
+    <div class="shell">
+      <div class="container">
+        <div class="row justify-content-center text text-align">
+          <div
+            class="card col-md-3 mx-2 mb-4"
+            *ngFor="let g of galleryAdmin._embedded.oeuvres"
+          >
+            <div class="wsk-cp-product">
+              <div class="wsk-cp-img">
+                <img
+                  src="../../../assets/gallery/products/images/{{ g.image }}"
+                  alt="Product"
+                  class="img-responsive"
+                />
               </div>
-              <!-- <div class="title-product"> -->
+              <div class="wsk-cp-text">
+                <div class="category">
+                  <span>{{ g.nom }}</span>
+                </div>
+                <!-- <div class="title-product"> -->
                 <!-- <h3>{{ g.nom }}</h3> -->
-              <!-- </div> -->
-              <p>{{ g.description }}</p>
-              <div class="description-prod">
-                <p>Prix {{ g.prix }}</p>
-              </div>
-              <div class="card-footer">
-                <!-- <div class="wcf-left"><span class="price">{{ g.prix }}</span></div> -->
-                <div class="category"><span type="button" (click)="editOeuvre(g)">Modifier</span></div>
-                <div class="category"><span  type="button" (click)="deleteOeuvre(g.id)">Supprimer</span></div>
-                <!-- <div class="wcf-right"><a href="#" class="buy-btn">
+                <!-- </div> -->
+                <p>{{ g.description }}</p>
+                <div class="description-prod">
+                  <p>Prix {{ g.prix }}€</p>
+                </div>
+                <div class="card-footer">
+                  <!-- <div class="wcf-left"><span class="price">{{ g.prix }}</span></div> -->
+                  <div class="category">
+                    <span type="button" (click)="editOeuvre(g)">Modifier</span>
+                  </div>
+                  <div class="category">
+                    <span type="button" (click)="deleteOeuvre(g.id)"
+                      >Supprimer</span
+                    >
+                  </div>
+                  <!-- <div class="wcf-right"><a href="#" class="buy-btn">
                   
                   <i class="fas fa-shopping-basket"> </i>
                 </a></div> -->
+                </div>
               </div>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
     </div>
-  </div>
-    
-<!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD POST       ************************* -->
-<ng-container *ngIf="showAddForms" id=addForms>
-<h1 class="text-center text-dark mt-4">Ajouter une oeuvre à l'inventaire</h1>
 
-<!-- **********************         FORMS             ************************ -->
+    <!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD POST       ************************* -->
+    <ng-container *ngIf="showAddForms" id="addForms">
+      <h1 class="text-center text-dark mt-4" id="titre">
+        Ajouter une œuvre à la Gallerie
+      </h1>
 
-<form class="form-style-9" (ngSubmit)="addOeuvre(oeuvre)" #oeuvre="ngForm">
-  <ul>
-    <li>
-      <!-- *****************         Nom de l'œuvre              **************************-->
-      <input type="text" name="nom" class="field-style field-split align-left" placeholder="Nom de l'oeuvre"
-        ngModel required minlength="4" maxlength="50">
+      <!-- **********************         FORMS             ************************ -->
 
-      <!-- *****************                  categorie                         **************************-->
-      <select name="categorie" class="mt-2" placeholder="--Choisissez une categorie--" ngModel required >
-        <option value="categorie">--Choisissez une categorie--</option>
-        <option value={{c.id}} *ngFor="let c of categorieAdmin._embedded.categories">{{ c.nom }}</option>
-        
-      </select>
+      <form
+        class="form-style-9"
+        (ngSubmit)="addOeuvre(oeuvre)"
+        #oeuvre="ngForm"
+      >
+        <ul>
+          <li>
+            <!-- *****************         Nom de l'œuvre              **************************-->
+            <input
+              type="text"
+              name="nom"
+              class="field-style field-split align-left"
+              placeholder="Nom"
+              ngModel
+              required
+              minlength="4"
+              maxlength="50"
+            />
 
-      <!-- *****************                   Prix                          **************************-->
-    </li>
-    <li>
-      <input type="number" name="prix" class="field-style field-split align-left" placeholder="Prix" ngModel required>
-      <!-- *****************                quantité                          ***************************-->
-      <input type="number" name="quantite" class="field-style field-split align-right" placeholder="Quantité" ngModel required> 
-    </li>
-    <!-- *****************                disponibilité                          ***************************-->
-    <input
-      type="checkbox" checked name="disponibilite" class="field-style field-split align-right" placeholder="Disponibilite" ngModel required>
-    <!-- *****************                Image                          **************************-->
-    <li>
-      <input type="text" name="image" class="field-style field-full align-none" placeholder="Image" ngModel required>
-    </li>
+            <!-- *****************                  categorie                         **************************-->
+            <select
+              name="categorie"
+              class="mt-2"
+              placeholder="--Choisissez une categorie--"
+              ngModel
+              required
+            >
+              <option value="categorie">--Choisissez une categorie--</option>
+              <option
+                value="{{ c.id }}"
+                *ngFor="let c of categorieAdmin._embedded.categories"
+              >
+                {{ c.nom }}
+              </option>
+            </select>
 
-    <!-- *****************           Description de l'œuvre              **************************-->
-    <li>
-      <textarea name="description" class="description" placeholder="Description" ngModel required minlength="1" maxlength="100"></textarea>
-    </li>
-    <li>
-      <!-- <a class="wsk-btn" type="submit">Enregistrer</a> -->
-      <button class="wsk-btn" type="submit" value="Enregistrer">Enregistrer</button>
-    </li>
-  </ul>
-</form>
-</ng-container>
+            <!-- *****************                   Prix                          **************************-->
+          </li>
+          <li>
+            <input
+              type="number"
+              name="prix"
+              class="field-style field-split align-left"
+              placeholder="Prix"
+              ngModel
+              required
+            />
+            <!-- *****************                quantité                          ***************************-->
+            <input
+              type="number"
+              name="quantite"
+              class="field-style field-split align-right"
+              placeholder="Quantité"
+              ngModel
+              required
+            />
+          </li>
+          <!-- *****************                disponibilité                          ***************************-->
+          <input
+            type="text"
+            name="disponibilite"
+            [disabled]="true"
+            class="mt-2 field-style field-split align-left"
+            placeholder="Disponibilité"
+          />
+          <input
+            type="checkbox"
+            checked
+            name="disponibilite"
+            class="field-style field-split align-right"
+            placeholder="Disponibilite"
+            ngModel
+            required
+          />
+          <!-- *****************                Image                          **************************-->
+          <li>
+            <input
+              type="text"
+              name="image"
+              class="mt-2 field-style field-full align-none"
+              placeholder="Image"
+              ngModel
+              required
+            />
+          </li>
 
-<!-- *****   FIN formulaire   ***** -->
+          <!-- *****************           Description de l'œuvre              **************************-->
+          <li>
+            <textarea
+              type="text"
+              name="description"
+              class="description"
+              placeholder="Description"
+              ngModel
+              required
+              minlength="1"
+              maxlength="1000"
+            ></textarea>
+          </li>
+          <li>
+            <!-- <a class="wsk-btn" type="submit">Enregistrer</a> -->
+            <button class="wsk-btn" type="submit" value="Enregistrer">
+              Enregistrer
+            </button>
+          </li>
+        </ul>
+      </form>
+    </ng-container>
 
+    <!-- *****   FIN formulaire   ***** -->
 
-  <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
-  <ng-container *ngIf="showEditForms" id=formsEdit>
-    <div class="container-fluid mt-4">
+    <!-- *******************      INVENTAIRES DES OEUVRES : FORMULAIRE CRUD PUT - MODIFICATIONS       ************************* -->
+    <ng-container *ngIf="showEditForms" id="formsEdit">
+      <h1 class="text-center text-dark mt-4" id="titre">
+        Modifier les données des oeuvres
+      </h1>
 
-      <h1 class="text-center mt-4">Modifier Oeuvre</h1>
+      <!-- **********************         FORMS             ************************ -->
 
-      <form (ngSubmit)="saveModifications()">
+      <form class="form-style-9" (ngSubmit)="saveModifications()">
+        <ul>
+          <li>
+            <!-- *****************         id de l'œuvre              **************************-->
+            <input
+              type="text"
+              name="id"
+              [disabled]="true"
+              [(ngModel)]="oeuvrehtml.id"
+              class="field-style field-split align-left"
+              placeholder="Id"
+            />
+
+            <!-- *****************         Nom de l'œuvre              **************************-->
+            <input
+              type="text"
+              name="nom"
+              [(ngModel)]="oeuvrehtml.nom"
+              class="field-style field-split align-right"
+              placeholder="Nom"
+              minlength="1"
+              maxlength="500"
+            />
+
+            <!-- *****************                  categorie                         **************************-->
+            <select
+              name="categorie"
+              [(ngModel)]="oeuvrehtml.categorie"
+              class="mt-2"
+              placeholder="Categorie"
+              placeholder="--Choisissez une categorie--"
+            >
+              <option value="categorie">--Choisissez une categorie--</option>
+              <option
+                value="{{ c.id }}"
+                *ngFor="let c of categorieAdmin._embedded.categories"
+              >
+                {{ c.nom }}
+              </option>
+            </select>
+
+            <!-- *****************                   Prix                          **************************-->
+          </li>
+          <li>
+            <input
+              type="number"
+              name="prix"
+              [(ngModel)]="oeuvrehtml.prix"
+              class="field-style field-split align-left"
+              placeholder="Prix"
+            />
+
+            <!-- *****************                quantité                          ***************************-->
+            <input
+              type="number"
+              name="quantite"
+              [(ngModel)]="oeuvrehtml.quantite"
+              class="field-style field-split align-right"
+              placeholder="Quantité"
+            />
+          </li>
+
+          <!-- *****************                disponibilité                          ***************************-->
+          <input
+            type="text"
+            name="disponibilite"
+            [disabled]="true"
+            class="mt-2 field-style field-split align-left"
+            placeholder="Disponibilité"
+          />
+
+          <input
+            type="checkbox"
+            checked
+            name="disponibilite"
+            class="field-style field-split align-right"
+            placeholder="Disponibilite"
+            [(ngModel)]="oeuvrehtml.quantite"
+          />
+
+          <!-- *****************                Image                          **************************-->
+          <li>
+            <input
+              type="text"
+              name="image"
+              class="mt-2 field-style field-full align-none"
+              placeholder="Image"
+              [(ngModel)]="oeuvrehtml.image"
+            />
+          </li>
+
+          <!-- *****************           Description de l'œuvre              **************************-->
+          <li>
+            <textarea
+              type="text"
+              name="description"
+              class="description"
+              placeholder="Description"
+              [(ngModel)]="oeuvrehtml.description"
+              minlength="1"
+              maxlength="1000"
+            ></textarea>
+          </li>
+          <li>
+            <button class="wsk-btn" type="submit" value="Enregistrer">
+              Enregistrer
+            </button>
+          </li>
+        </ul>
+      </form>
+    </ng-container>
+
+    <!-- *****   FIN formulaire   ***** -->
+
+    <!-- ******TWO WAY BINDING [(ngModel)] formulario per inserire le modifiche corrispondente al pulsante modifica******************************************************** -->
+    <!-- <ng-container *ngIf="showEditForms" id="formsEdit">
+      <div class="container-fluid mt-4">
+        <h1 class="text-center mt-4">Modifier Oeuvre</h1>
+
+        <form (ngSubmit)="saveModifications()">
           <fieldset>
-            <label class="col-form-label mt-4" for="image">Lien de l'image</label>
+            <label class="col-form-label mt-4" for="image"
+              >Lien de l'image</label
+            >
             <div class="form-group">
-                <input class="form-control" name="image" [(ngModel)]="oeuvrehtml.image">
+              <input
+                class="form-control"
+                name="image"
+                [(ngModel)]="oeuvrehtml.image"
+              />
             </div>
-              <label class="col-form-label mt-4" for="id">Id</label>
-              <div class="form-group">
-                  <input class="form-control" name="id" [disabled]="true"
-                      [(ngModel)]="oeuvrehtml.id">
-              </div>
-              <label class="col-form-label mt-4" for="nom">Nom </label>
-              <div class="form-group">
-                  <input class="form-control" name="nom" [(ngModel)]="oeuvrehtml.nom">
-              </div>
-              <label class="col-form-label mt-4" for="description">Description</label>
-              <div class="form-group">
-                  <input class="form-control" name="description"
-                      [(ngModel)]="oeuvrehtml.description">
-              </div>
-              <label class="col-form-label mt-4" for="disponibilite">Disponibilite</label>
-              <div class="form-group">
-                  <input class="form-control" name="disponibilite" [(ngModel)]="oeuvrehtml.disponibilite">
-              </div>
-              <label class="col-form-label mt-4" for="prix">Prix</label>
-              <div class="form-group">
-                  <input class="form-control" name="prix" [(ngModel)]="oeuvrehtml.prix">
-              </div>
-              <label class="col-form-label mt-4" for="quantite">Quantité</label>
-              <div class="form-group">
-                  <input class="form-control" name="quantite" [(ngModel)]="oeuvrehtml.quantite">
-              </div>
-              <!-- <label class="col-form-label mt-4" for="categorie">Catégorie</label>
+            <label class="col-form-label mt-4" for="id">Id</label>
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="id"
+                [disabled]="true"
+                [(ngModel)]="oeuvrehtml.id"
+              />
+            </div>
+            <label class="col-form-label mt-4" for="nom">Nom </label>
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="nom"
+                [(ngModel)]="oeuvrehtml.nom"
+              />
+            </div>
+            <label class="col-form-label mt-4" for="description"
+              >Description</label
+            >
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="description"
+                [(ngModel)]="oeuvrehtml.description"
+              />
+            </div>
+            <label class="col-form-label mt-4" for="disponibilite"
+              >Disponibilite</label
+            >
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="disponibilite"
+                [(ngModel)]="oeuvrehtml.disponibilite"
+              />
+            </div>
+            <label class="col-form-label mt-4" for="prix">Prix</label>
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="prix"
+                [(ngModel)]="oeuvrehtml.prix"
+              />
+            </div>
+            <label class="col-form-label mt-4" for="quantite">Quantité</label>
+            <div class="form-group">
+              <input
+                class="form-control"
+                name="quantite"
+                [(ngModel)]="oeuvrehtml.quantite"
+              />
+            </div> -->
+    <!-- <label class="col-form-label mt-4" for="categorie">Catégorie</label>
               <div class="form-group">
                   <input class="form-control" name="categorie" [(ngModel)]="oeuvrehtml.categorie">
               </div> -->
 
-              <button type="submit" class="btn btn-outline-dark">Valider</button>
+    <!-- <button type="submit" class="btn btn-outline-dark">Valider</button>
           </fieldset>
-
-      </form>
+        </form>
+      </div>
+    </ng-container> -->
   </div>
-</ng-container>
 </div>
-</div>
-

@@ -1,12 +1,13 @@
 /*------------------*
 # Main-menu
 *------------------*/
-/* .container-fluid{
+/* container-fluid{
     margin-left: auto;
     margin-right: auto;
     width: 1400px;
-} */
-.main-menu li {
+}  */
+
+/* .main-menu li {
     margin: 0 1px;
     position: relative;
 }
@@ -78,7 +79,7 @@
 .theme3 li.active>a {
     color: #10a341;
 }
-
+ */
 
 
 /*---------------------------*
@@ -335,7 +336,7 @@ span.separator {
 }
 
 hr.hr {
-    background-color: #ebebeb;
+    background-color: #fcf6f6;
     opacity: 1;
 }
 
@@ -360,3 +361,76 @@ span.required {
 
 
 
+nav ul li  {
+    margin-left: 5%; 
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+   
+}
+
+.navbar {
+    text-align: left;
+    align-items: center;
+    font-family: "Gilroy-Bold ☞";
+    font-weight: 700;
+    display: block;
+    padding: 15px 20px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+   
+    
+}
+
+.theme1 li a {
+    color: #1d1d1d;
+}
+
+.theme1 li:hover>a {
+    color: #f33535;
+}
+
+.theme1 li.active>a {
+    color: #f33535;
+}
+
+.theme2 li a {
+    color: #1d1d1d;
+    line-height: 1.2;
+}
+
+@media screen and (min-width: 992px) {
+    .theme2 li a {
+        color: #ffffff;
+    }
+}
+
+.theme2 li:hover>a {
+    color: #ff7519;
+}
+
+.theme2 li.active>a {
+    color: #ff7519;
+}
+
+.theme3 li a {
+    color: #1d1d1d;
+    line-height: 1.2;
+}
+
+@media screen and (min-width: 992px) {
+    .theme3 li a {
+        color: #ffffff;
+    }
+}
+
+.theme3 li:hover>a {
+    color: #10a341;
+}
+
+.theme3 li.active>a {
+    color: #10a341;
+}

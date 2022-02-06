@@ -1,5 +1,5 @@
 <!-- **********************************************cover della pagina gallery********************************************************************* -->
-<div class="container-fluid">
+
 <section id="hero">
   <div class="inner">
     <h1>Arghillà Gallerie</h1>
@@ -25,7 +25,7 @@
 <!-- texte -->
 <div class="container mt-4">
   <h3 class="uk-panel-title text-center">
-    L'ARTS DES TERRES |<em>THE ART OF LANDS</em>
+    L'ARTS DES TERRES |<em> THE ART OF LANDS</em>
   </h3>
   <p class="uk-h3" style="text-align: center">
     <span style="color: #808080"
@@ -43,37 +43,37 @@
     >
   </p>
   <p class="mt-4 text-elign">
-    Arghillà est un quartier de la ville de Reggio Calabria (Italie), le lieu où
-    la mémoire, la culture et le symbolisme de la terre de Calabre prennent
-    forme. Le terme est onomatopéique, rappelant l'argile, mais l'étymologie du
-    nom dérive peut-être de chèvre. De toute façon, argile ou chèvres, l'atelier
-    de Nicola Tripodi est bien pourvu des deux. Les créations de son atelier
-    nommé "Figulus" ne sont pas de simples artefacts, mais des œuvres d'art qui
-    allient habileté manuelle, couleur, recherche et retour aux origines.Dans
-    son atelier, Nicola Tripodi utilise son expérience dans la production de
-    terre cuite : candélabres, récipients, luminaires, masques, sculptures et
-    bien d'autres choses encore. L'intégralité de ses œuvres sont des pièces
-    uniques, modelés et décorés à la main. La mise en scène des pièces se
-    compose d'une structures qui, à l'aide de fils presque invisibles, valorise
-    les œuvres conçues pour intégrer un nouveau habitat en apportant leur côté
-    fonctionnel. La terre cuite produite dans l'atelier est modelée et décorée à
-    la main. Chacun d'eux est pièce unique. Laissez-vous captiver par les
-    candélabres représentant personnages, mythiques, épiques et symboles du
-    territoire, ou encore les lampes représentant représentant l'eau, la terre
-    et le ciel.
+    <span id="firstLetter">A</span>rghillà est un quartier de la ville de Reggio
+    Calabria (Italie), le lieu où la mémoire, la culture et le symbolisme de la
+    terre de Calabre prennent forme. Le terme est onomatopéique, rappelant
+    l'argile, mais l'étymologie du nom dérive peut-être de chèvre. De toute
+    façon, argile ou chèvres, l'atelier de Nicola Tripodi est bien pourvu des
+    deux. Les créations de son atelier nommé "Figulus" ne sont pas de simples
+    artefacts, mais des œuvres d'art qui allient habileté manuelle, couleur,
+    recherche et retour aux origines.Dans son atelier, Nicola Tripodi utilise
+    son expérience dans la production de terre cuite : candélabres, récipients,
+    luminaires, masques, sculptures et bien d'autres choses encore.
+    L'intégralité de ses œuvres sont des pièces uniques, modelés et décorés à la
+    main. La mise en scène des pièces se compose d'une structures qui, à l'aide
+    de fils presque invisibles, valorise les œuvres conçues pour intégrer un
+    nouveau habitat en apportant leur côté fonctionnel. La terre cuite produite
+    dans l'atelier est modelée et décorée à la main. Chacun d'eux est pièce
+    unique. Laissez-vous captiver par les candélabres représentant personnages,
+    mythiques, épiques et symboles du territoire, ou encore les lampes
+    représentant représentant l'eau, la terre et le ciel.
   </p>
   <p></p>
-  <em>
-    Arghillà is a district of Reggio Calabria, the place where the memory,
-    culture and symbolism of the land of Calabria take shape. The term is
-    onomatopoeic, recalling clay, but perhaps the etymology of the name derives
-    from goat. In any case, clay or goats, Nicola Tripodi's workshop is well
-    stocked with both. The creations of his "Figulus" workshop are not just
-    simple artefacts, but works of art that combine manual skill, colour,
-    research and a return to the origins. In his workshop, Nicola Tripodi uses
-    his experience in the production of terracotta: candelabras, containers,
-    lights, masks, sculptures and more, all unique pieces, modelled and
-    decorated by hand. A very modern exhibition project of structures which,
+  <em id="anglais">
+    <span id="firstLetter">A</span>rghillà is a district of Reggio Calabria, the
+    place where the memory, culture and symbolism of the land of Calabria take
+    shape. The term is onomatopoeic, recalling clay, but perhaps the etymology
+    of the name derives from goat. In any case, clay or goats, Nicola Tripodi's
+    workshop is well stocked with both. The creations of his "Figulus" workshop
+    are not just simple artefacts, but works of art that combine manual skill,
+    colour, research and a return to the origins. In his workshop, Nicola
+    Tripodi uses his experience in the production of terracotta: candelabras,
+    containers, lights, masks, sculptures and more, all unique pieces, modelled
+    and decorated by hand. A very modern exhibition project of structures which,
     with the support of almost invisible threads, keep the original artefacts
     suspended, traditional for the raw material and the techniques applied,
     innovative for their functional insertion in today's homes. The terracotta
@@ -85,42 +85,53 @@
 </div>
 
 <!-- *******************************cards products methode *ngFor********************** -->
-<div class="container mt-4">
-<div class="container text-center">
-  <h1>Gallerie</h1>
-  </div>
-  <div class="shell">
-    <div class="container">
-        
-      <div class="row justify-content-center text text-align">
-        <div class="card col-md-3 mx-2 mb-4" *ngFor="let g of galleryTs._embedded.oeuvres">
-          <div class="wsk-cp-product" >
-            <div class="wsk-cp-img">
-              <img src="../../../assets/gallery/products/images/{{g.image}}" alt="Product" class="img-responsive" />
-            </div>
-            <div class="wsk-cp-text">
-              <div class="category">
-                <span>{{ g.nom }}</span>
+<div class="container-fluid">
+  <div class="container mt-4">
+    <div class="container text-center">
+      <h1>Gallerie</h1>
+    </div>
+    <div class="shell">
+      <div class="container">
+        <div class="row justify-content-center text text-align">
+          <div
+            class="card col-md-3 mx-2 mb-4"
+            *ngFor="let g of galleryTs._embedded.oeuvres"
+          >
+            <div class="wsk-cp-product">
+              <div class="wsk-cp-img">
+                <img
+                  src="../../../assets/gallery/products/images/{{ g.image }}"
+                  alt="Product"
+                  class="img-responsive"
+                />
               </div>
-              <!-- <div class="title-product"> -->
+              <div class="wsk-cp-text">
+                <div class="category">
+                  <span>{{ g.nom }}</span>
+                </div>
+                <!-- <div class="title-product"> -->
                 <!-- <h3>{{ g.nom }}</h3> -->
-              <!-- </div> -->
-              <p>{{ g.description }}</p>
-              
-              <div class="card-footer">
-                <div class="wcf-left"><span class="price">{{ g.prix }}</span></div>
-               
-                <div class="wcf-right"><a href="#" class="buy-btn"> 
-                  
-                  <i class="fas fa-shopping-basket"> </i>
-                </a></div> 
+                <!-- </div> -->
+                <p>{{ g.description }}</p>
+
+                <div class="card-footer">
+                  <div class="wcf-left">
+                    <span class="price">{{ g.prix }}€</span>
+                  </div>
+
+                  <div class="wcf-right">
+                    <a href="#" class="buy-btn">
+                      <i class="fas fa-shopping-basket"> </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- ***************************fin cards oeuvres ***************************************-->
+
+  <!-- ***************************fin cards oeuvres ***************************************-->
 </div>

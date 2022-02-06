@@ -1,13 +1,14 @@
 #hero {
     position: relative;
     height: 100vh;
-    background: url('https://www.arghilla.com/images/slider-home/arghilla-homeslider-04.jpg') no-repeat center;
+    background: url('https://www.arghilla.com/images/opere/MASCHERE/MA-maschera-23x23-MA01.jpg') no-repeat center;
     background-size:cover;
     color: #ffffff;
   
     display: flex;
     align-items: center;
     padding: 0 60px;
+    margin-top: 3%;
   }
 
 

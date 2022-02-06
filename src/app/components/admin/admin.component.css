@@ -2,9 +2,10 @@
 #hero {
     position: relative;
     height: 100vh;
-    background: url('https://www.arghilla.com/images/slider-home/arghilla-homeslider-05.jpg') no-repeat center;
+    background: url('https://materceramica.org/wp-content/uploads/2018/11/10.jpg') no-repeat center;
     background-size:cover;
     color: #fffefe;
+    margin-top: 3%;
   
     display: flex;
     align-items: center;
@@ -22,7 +23,13 @@
     /* background-color: rgba(0,0,0,0.3); */
   }
 
-
+  p {
+    font-size: larger
+  }
+  
+  #titre{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
  
   .form-style-9{
     max-width: 450px;
