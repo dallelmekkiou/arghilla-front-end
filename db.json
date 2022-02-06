@@ -46,7 +46,16 @@
       "paese": "Francia"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "idOeuvre": 5,
+      "nom": "CHANDELIER \\nULYSSE ET PÉNÉLOPE",
+      "image": "chandelier2.jpeg",
+      "prix": 600,
+      "quantite": "1",
+      "id": 1
+    }
+  ],
   "commande": [
     {
       "nom": "",
