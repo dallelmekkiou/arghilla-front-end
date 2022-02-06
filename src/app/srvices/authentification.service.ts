@@ -14,7 +14,7 @@ export class AuthentificationService {
   authentification: boolean = true //variable de type boolean qui indique si l'user est authentifié ou pas isAuthenticated
   userAuthentifié: any //enregistrer l'user qui s'est authentifié useruthentiated
   utilisateurs=new Array; //le tableau qui pour stocker les utilisateurs 
-
+  admin:boolean=false;
   getUtilisateurs(){
     return this.http.get(this.url)
     
@@ -25,7 +25,7 @@ export class AuthentificationService {
     let loginOn
 
     this.utilisateurs.forEach((l) => {
-      console.log(l,l.mail,l.password);
+      // console.log(l,l.mail,l.password);
       if (l.mail == email && l.password == password) {
         loginOn = l
         console.log('loginOn',loginOn)
@@ -34,6 +34,9 @@ export class AuthentificationService {
     if (loginOn) {
       this.authentification = true //l'user est authentifié
       this.userAuthentifié = loginOn // on enregistre que l'user est authentifié
+      this.User()
+      this.Admin()
+      console.log('admin',this.admin)
     } else {
       this.authentification = false //l'user n'est pas authentifié
       this.userAuthentifié = undefined //dans le cas où l'user est déjà authentifié
@@ -41,6 +44,7 @@ export class AuthentificationService {
   }
 
   public User() {
+    console.log("je suis dans la methode user")
     //méthode pour l'authentification de l'administrateur
     if (this.userAuthentifié) {
       // on voit d'abord si l'user est autentifié
@@ -48,12 +52,14 @@ export class AuthentificationService {
         //pour chercher une chaine dans un tableau on peut utiliser directement indexOf
         // et il nous retourne la position à laquelle se trouve cette chaîne
         //si elle est >-1 ca veut dire que ça existe
+        this.admin=false
         return true
     }
     return false
   }
 
   public Admin() {
+    console.log("je suis dans la methode admin")
     //méthode pour l'authentification de l'administrateur
     if (this.userAuthentifié) {
       // on voit d'abord si l'user est autentifié
@@ -61,6 +67,9 @@ export class AuthentificationService {
         //pour chercher une chaine dans un tableau on peut utiliser directement indexOf
         // et il nous retourne la position à laquelle se trouve cette chaîne
         //si elle est >-1 ca veut dire que ça existe
+        this.admin=true
+        localStorage.setItem('admin',String(this.admin));
+        console.log('admin',this.admin)
         return true
     }
     return false
@@ -85,6 +94,7 @@ export class AuthentificationService {
       let user = JSON.parse(atob(titi))
       this.userAuthentifié = { email: user.email, role: user.role }
       this.authentification = true
+      let admin=localStorage.getItem('admin')
     }
   }
 
@@ -92,6 +102,8 @@ export class AuthentificationService {
     localStorage.removeItem('saveUser')
     this.authentification = false
     this.userAuthentifié = undefined
+    this.admin=false
+    localStorage.removeItem('admin');
   }
 
   public addUser(utilisateur:any){

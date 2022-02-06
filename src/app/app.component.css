@@ -6,6 +6,8 @@
     margin-right: auto;
     width: 1400px;
 } */
+
+
 .main-menu li {
     margin: 0 1px;
     position: relative;
@@ -46,11 +48,11 @@
     line-height: 1.2;
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {   
     .theme2 li a {
         color: #ffffff;
     }
-}
+} */
 
 .theme2 li:hover>a {
     color: #ff7519;
@@ -65,11 +67,11 @@
     line-height: 1.2;
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
     .theme3 li a {
         color: #ffffff;
     }
-}
+} */
 
 .theme3 li:hover>a {
     color: #10a341;
@@ -213,81 +215,81 @@ span.separator {
 .theme-border2 {
     border: 2px solid #ff7519 !important;
 }
-
+/* 
 @media screen and (min-width: 1200px) {
     .position-xl-relative {
         position: relative;
     }
-}
+} */
 
 .custom-column .row>.col-xl-5 {
     max-width: 100%;
 }
-
+/* 
 @media screen and (min-width: 1920px) {
     .custom-column .row>.col-xl-5 {
         width: 50%;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 1919px) {
     .custom-column .row>.col-xl-5 {
         width: 60%;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 1200px) {
     .custom-column .row>.col-xl-5 {
         width: 72%;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 991px) {
     .custom-column .row>.col-xl-5 {
         width: 40%;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 575px) {
     .custom-column .row>.col-xl-5 {
         width: 100%;
     }
-}
+} */
 
 .custom-column .row>.col-xl-4 {
     max-width: 100%;
 }
-
+/* 
 @media screen and (min-width: 1920px) {
     .custom-column .row>.col-xl-4 {
         width: 36%;
     }
-}
-
+} */
+/* 
 @media screen and (min-width: 992px) and (max-width: 1919px) {
     .custom-column .row>.col-xl-4 {
         width: auto;
         display: none;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 991px) {
     .custom-column .row>.col-xl-4 {
         width: 100%;
         display: block;
     }
-}
+} */
 
 .custom-column .row>.col-xl-3 {
     max-width: 100%;
 }
-
+/* 
 @media screen and (min-width: 1920px) {
     .custom-column .row>.col-xl-3 {
         width: 14%;
     }
-}
-
+} */
+/* 
 @media screen and (max-width: 1919px) {
     .custom-column .row>.col-xl-3 {
         width: 40%;
@@ -328,7 +330,7 @@ span.separator {
     .position-lg-static {
         position: static !important;
     }
-}
+} */
 
 .zIndex-3 {
     z-index: 3;
@@ -351,12 +353,46 @@ span.required {
     width: 100%;
     max-width: 100%;
 }
-
+/* 
 @media screen and (min-width: 768px) {
     .w-md-50 {
         max-width: 50%;
     }
-}
+} */
 
+/* mettre la nav bar responsive */
+.header-bottom label
+{
+    display: none;
+} 
+ 
+@media all and (max-width: 991px)
+{
+    .header-bottom 
+    {
+        height: 60px;
+    }
+ 
+    .header-bottom .main-menu
+    {
+        display: none;
+    }
+ 
+    .header-bottom label
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color:rgb(133, 8, 8);
+        cursor: pointer;
+    }
+}
+/* ce code affiche les trois barres horizontales */
+/* .header-bottom label{
+    color:red;
+} */
 
 

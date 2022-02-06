@@ -9,11 +9,16 @@ import { AuthentificationService } from './srvices/authentification.service';
 })
 export class AppComponent {
   title = 'eCommerceArghilla';
+  
   constructor(public authentificationService:AuthentificationService,private router:Router) {
   }
+  admin:any
   ngOnInit(): void {
-   
+ 
     this.authentificationService.getLoadUserLocalStorage()
+   
+    console.log('admin de appcomponent.ts',this.authentificationService.admin)
+
 }
 LogOut() {
  this.authentificationService.removeLocalStorage()

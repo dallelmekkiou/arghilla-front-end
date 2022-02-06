@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router';
 import { GalleryService } from 'src/app/services/gallery.service'
 
 @Component({
@@ -25,10 +26,10 @@ export class AdminComponent implements OnInit {
   // poi do un nome a cazzo di cane per dire che è uguale al nome del component del servizio a cuio voglio
   // dirigermi
 
-  constructor(private service: GalleryService) {}
+  constructor(private service: GalleryService,private router: Router) {}
 
-  galleryAdmin: any //variabile locale
-
+  page=[0,1,2,3,4,5];
+  galleryAdmin: any 
   categorieAdmin: any
   categorie:any
   categorieById:any
@@ -49,10 +50,9 @@ export class AdminComponent implements OnInit {
   
 
   getGalleryAdmin() {
-    this.service.getGalleryService().subscribe((data) => {
+  let nbr=0
+    this.service.getGalleryService(nbr).subscribe((data) => {
       this.galleryAdmin = data
-      // console.log(this.galleryAdmin)
-      // console.log('disponibilite',this.galleryAdmin._embedded.oeuvres)
     })
   }
   //******************************************************   REQUETE CRUD GET CATEGORIE  ***********************************************
@@ -75,6 +75,7 @@ export class AdminComponent implements OnInit {
   addOeuvre(oeuvre: any) {
    
     let data = oeuvre.value
+    this.showAddForms= false
     this.service.getCategorieServiceId(data.categorie).subscribe((response) => {
       data.categorie = response
     this.service.addOeuvreService(data).subscribe((resp) => {
@@ -93,8 +94,10 @@ export class AdminComponent implements OnInit {
 
   //******************************************************   REQUETE CRUD DELETE   ***********************************************
   deleteOeuvre(id: any) {
+    this.getGalleryAdmin()
     this.service.deleteOeuvreService(id).subscribe((data) => {
       console.log("L'oeuvre a été bien supprimée")
+     
     })
   }
 
@@ -109,26 +112,23 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  // qui sto dicendo che al click il metodo formulario modifica deve apparire con showMe
   formulaireModifications(g: any) {
     this.galleryAdmin = g
   }
 
   saveModifications() {
+    this.showEditForms= false
     this.service.saveModificationsService(this.oeuvrehtml).subscribe((data) => {
       console.log('Le modifiche sono state effettuate!')
       // (this.producthtml) this è per dire che stiamo su una variabile locale
     })
   }
 
-  //method per salvare i dati inseriti nel formulario presente nel component
-  // admin (html e ts) nel database che di conseguenza li farà apparire
-  // nel browser grazie al metodo get
-
-  // getInventario() {
-  //   this.service.getGalleryInventario().subscribe((data) => {
-  //     this.galleryInventario = data
-  //     console.log(this.galleryInventario)
-  //   })
-  // }
+  paginer(p:any){
+    this.service.getGalleryService(p).subscribe((data) => {
+      this.galleryAdmin = data
+     
+    })
+  }
+  
 }

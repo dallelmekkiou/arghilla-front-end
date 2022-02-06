@@ -59,7 +59,7 @@
         
       <div class="row justify-content-center text text-align">
           <div class="card col-md-3 mx-2 mb-4 " *ngFor="let g of galleryAdmin._embedded.oeuvres">
-          <div class="wsk-cp-product " >
+           <div class="wsk-cp-product " >
             <div class="wsk-cp-img">
               <img src="../../../assets/gallery/products/images/{{g.image}}" alt="Product" class="img-responsive" />
             </div>
@@ -85,8 +85,15 @@
               </div>
             </div>
           </div>
+          
         </div>    
       </div>
+     <!-- la pagination -->
+        <ul class="pagination " *ngFor=" let  p of page">
+          <li class="page-item" aria-current="page">
+            <span class="page-link" (click)="paginer(p)">{{p}}</span>
+          </li>
+        </ul>
     </div>
   </div>
     

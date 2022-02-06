@@ -1,31 +1,33 @@
 <!-- ***********************************NAVBAR******************************************* -->
 <!-- header bottom start -->
 <!-- header bottom start -->
+
 <div class="container-fluid">
     <nav class="header-bottom theme1 d-none d-lg-block">
-        <div class="container">
+      
             <div class="row align-items-center">
                 <div class="col-lg-10 offset-lg-2 d-flex flex-wrap align-items-center position-relative">
-
                     <ul class="main-menu d-flex fixed-top bg-light align-items-center">
                         <li><a class="tm-logo uk-hidden-small" href="#"><img src="../assets/logo/logo_logo.png" alt=""></a>
                         </li>
+                        <label>☰</label>
                         <ul class="d-flex align-items-center align-center text-center">
                           <li routerLinkActive="active"><a routerLink="home">Accueil</a></li>
                           <li routerLinkActive="active"><a routerLink="gallery">Gallerie</a></li>
                           <li routerLinkActive="active"><a routerLink="about">A propos</a></li>
                           <li routerLinkActive="active"><a routerLink="shop">Achat</a></li>
-                          <li routerLinkActive="active"><a routerLink="admin">Administrateur</a></li>
+                          <li routerLinkActive="active"><a *ngIf="authentificationService.admin" routerLink="admin">Administrateur</a></li>
                         </ul>
                         <li routerLinkActive="active"><a *ngIf="authentificationService.authentification" (click)="LogOut()" >Déconnexion</a></li>
                         <li routerLinkActive="active"><a *ngIf="!authentificationService.authentification" routerLink="authentification" >Connexion</a></li>
-                    </ul>
 
+                    </ul>
                 </div>
             </div>
-        </div>
+        
     </nav>
 </div>
 <!-- header bottom end -->
 
 <router-outlet></router-outlet>
+<!-- *ngIf="authentificationService.admin"  -->

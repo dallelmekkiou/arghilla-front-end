@@ -46,15 +46,55 @@
       "paese": "Francia"
     }
   ],
-  "panier": [
+  "cart": [],
+  "commande": [
     {
-      "idProduit": 4,
-      "nomProduit": "crème hydratante corps",
-      "image": "../assets/img/creme-hydratante-corps.jpg",
-      "prix": 15,
-      "quantite": 9,
+      "nom": "",
+      "prenom": "",
+      "email": "",
+      "telephone": "",
+      "adresse": "",
+      "titulaireCarte": "",
+      "numeroCarte": "",
+      "ccv": "",
+      "total": 70,
       "id": 1
+    },
+    {
+      "nom": "",
+      "prenom": "",
+      "email": "",
+      "telephone": "",
+      "adresse": "",
+      "titulaireCarte": "",
+      "numeroCarte": "",
+      "ccv": "",
+      "total": 20,
+      "id": 2
+    },
+    {
+      "nom": "",
+      "prenom": "",
+      "email": "",
+      "telephone": "",
+      "adresse": "",
+      "titulaireCarte": "",
+      "numeroCarte": "",
+      "ccv": "",
+      "total": 20,
+      "id": 3
+    },
+    {
+      "nom": "dallel",
+      "prenom": "ppppppppppppp",
+      "email": "",
+      "telephone": "",
+      "adresse": "",
+      "titulaireCarte": "",
+      "numeroCarte": "",
+      "ccv": "",
+      "total": 90,
+      "id": 4
     }
   ]
-
 }
